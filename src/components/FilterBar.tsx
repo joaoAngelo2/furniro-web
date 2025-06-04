@@ -1,4 +1,9 @@
-const FilterBar = () => {
+interface FilterBarProps {
+  itemsPerPage: number;
+  onItemsPerPageChange: (value: number) => void;
+}
+
+const FilterBar = ({ itemsPerPage, onItemsPerPageChange }: FilterBarProps) => {
   return (
     <div className="w-full h-[6.25rem] flex-shrink-0 bg-[#F9F1E7] flex items-center justify-between px-8">
       <div className="flex items-center gap-6">
@@ -56,9 +61,17 @@ const FilterBar = () => {
       <div className="flex items-center gap-4">
         <span className="font-poppins text-[1.25rem] font-normal">Show</span>
 
-        <div className="w-[3.4375rem] h-[3.4375rem] flex-shrink-0 bg-white flex items-center justify-center">
-          <span className="font-poppins text-[1.25rem] font-normal text-[#9F9F9F]">16</span>
-        </div>
+        <select
+          value={itemsPerPage}
+          onChange={(e) => onItemsPerPageChange(Number(e.target.value))}
+          className="w-[3.4375rem] h-[3.4375rem] flex-shrink-0 bg-white text-[#9F9F9F] font-poppins text-[1.25rem] font-normal text-center"
+        >
+          <option value="1">1</option>
+          <option value="4">4</option>
+          <option value="8">8</option>
+          <option value="12">12</option>
+          <option value="16">16</option>
+        </select>
 
         <span className="font-poppins text-[1.25rem] font-normal">Short by</span>
 
