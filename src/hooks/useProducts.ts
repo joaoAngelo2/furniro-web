@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export type ProductHint = "Disccount" | "New" | undefined;
+export type ProductHint = "New" | number | null;
 
 interface Product {
   id: string;

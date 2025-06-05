@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import ShopBanner from '../../components/ShopBanner';
-import FilterBar from '../../components/FilterBar';
-import ProductCard from '../../components/ProductCard';
-import Pagination from '../../components/Pagination';
-import useProducts from '../../hooks/useProducts';
+import { useState } from "react";
+import ShopBanner from "../../components/ShopBanner";
+import FilterBar from "../../components/FilterBar";
+import ProductCard from "../../components/ProductCard";
+import Pagination from "../../components/Pagination";
+import useProducts from "../../hooks/useProducts";
+import ServiceFeatures from "../../components/ServiceFeatures";
 
 export const ShopPage = () => {
   const [itemsPerPage, setItemsPerPage] = useState(16);
@@ -17,7 +18,7 @@ export const ShopPage = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="w-[90rem] mx-auto">
+    <div className="w-full mx-auto">
       <div className="h-[6.25rem]"></div>
       <ShopBanner />
       <FilterBar
@@ -39,6 +40,7 @@ export const ShopPage = () => {
           onPageChange={setCurrentPage}
         />
       </div>
+      <ServiceFeatures />
     </div>
   );
 };

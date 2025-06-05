@@ -67,7 +67,7 @@ function ProductHintBall({ hint }: ProductHintProps) {
   }
 
   if (hint === "New") {
-    color = "bg-hint-new-green]";
+    color = "bg-hint-new-green";
     label = "New";
   } else if (typeof hint === "number") {
     color = "bg-hint-discount-red";
