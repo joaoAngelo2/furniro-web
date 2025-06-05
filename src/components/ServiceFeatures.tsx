@@ -37,7 +37,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 
 const ServiceFeatures: React.FC = () => {
   return (
-    <div className="flex w-[90rem] h-[16.875rem] py-[6.25rem] px-0 flex-col justify-between items-center flex-shrink-0 bg-[#FAF3EA] mx-auto">
+    <div className="flex w-full h-[16.875rem] py-[6.25rem] px-0 flex-col justify-between items-center flex-shrink-0 bg-[#FAF3EA] mx-auto">
       <div className="flex justify-between w-full px-[6.25rem]">
         <FeatureItem
           icon={TrophyIcon}

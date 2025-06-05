@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard";
 import Pagination from "../../components/Pagination";
 import useProducts from "../../hooks/useProducts";
 import ServiceFeatures from "../../components/ServiceFeatures";
+import Header from "../../components/Header";
 
 export const ShopPage = () => {
   const [itemsPerPage, setItemsPerPage] = useState(16);
@@ -19,7 +20,7 @@ export const ShopPage = () => {
 
   return (
     <div className="w-full mx-auto">
-      <div className="h-[6.25rem]"></div>
+      <Header />
       <ShopBanner />
       <FilterBar
         itemsPerPage={itemsPerPage}

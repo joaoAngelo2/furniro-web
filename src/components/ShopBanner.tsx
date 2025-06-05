@@ -1,5 +1,5 @@
-import React from 'react';
-import shopBackground from '../assets/shop-background.svg';
+import React from "react";
+import shopBackground from "../assets/shop-background.svg";
 
 const ShopBanner: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const ShopBanner: React.FC = () => {
             className="transform -rotate-0"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M6 15L11 10L6 5L7 3L14 10L7 17L6 15Z" fill="black"/>
+            <path d="M6 15L11 10L6 5L7 3L14 10L7 17L6 15Z" fill="black" />
           </svg>
 
           <span className="text-black font-poppins text-[1rem] font-light">

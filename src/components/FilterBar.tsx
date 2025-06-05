@@ -73,10 +73,14 @@ const FilterBar = ({ itemsPerPage, onItemsPerPageChange }: FilterBarProps) => {
           <option value="16">16</option>
         </select>
 
-        <span className="font-poppins text-[1.25rem] font-normal">Short by</span>
+        <span className="font-poppins text-[1.25rem] font-normal">
+          Short by
+        </span>
 
         <div className="w-[11.75rem] h-[3.4375rem] flex-shrink-0 bg-white flex items-center justify-center">
-          <span className="font-poppins text-[1.25rem] font-normal text-[#9F9F9F]">Default</span>
+          <span className="font-poppins text-[1.25rem] font-normal text-[#9F9F9F]">
+            Default
+          </span>
         </div>
       </div>
     </div>
