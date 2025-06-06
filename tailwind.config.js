@@ -9,6 +9,10 @@ export default {
         'dark-text': '#242424',
         'gray-text': '#898989', 
         'bg-light-cream': '#FAF3EA',
+        'golden-brown': '#B88E2F',
+        'light-bg-gray': '#F4F5F7',
+        'light-gray-line': '#B0B0B0',
+        'light-pagination-bg': '#F9F1E7',
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

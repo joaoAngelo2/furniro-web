@@ -17,17 +17,17 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   description,
 }) => {
   return (
-    <div className="flex items-center gap-[0.625rem]">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-y-1 lg:gap-x-[0.625rem] w-full px-2 py-2 text-center lg:text-left">
       <img
         src={icon}
         alt={`${title} icon`}
-        className="w-[3.75rem] h-[3.75rem] flex-shrink-0"
+        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-[3.75rem] lg:h-[3.75rem] flex-shrink-0"
       />
       <div>
-        <h3 className="text-[#242424] font-poppins text-[1.5625rem] font-semibold leading-[150%]">
+        <h3 className="text-[#242424] font-poppins text-base sm:text-lg lg:text-[1.5625rem] font-semibold leading-tight whitespace-nowrap">
           {title}
         </h3>
-        <p className="text-[#898989] font-poppins text-[1.25rem] font-medium leading-[150%]">
+        <p className="text-[#898989] font-poppins text-sm sm:text-base lg:text-[1.25rem] font-medium leading-snug whitespace-nowrap">
           {description}
         </p>
       </div>
@@ -37,8 +37,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 
 const ServiceFeatures: React.FC = () => {
   return (
-    <div className="flex w-full h-[16.875rem] py-[6.25rem] px-0 flex-col justify-between items-center flex-shrink-0 bg-[#FAF3EA] mx-auto">
-      <div className="flex justify-between w-full px-[6.25rem]">
+    <div className="w-full py-[6.25rem] px-4 md:px-8 flex-shrink-0 bg-[#FAF3EA]">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-8 md:gap-y-12 gap-x-4 md:gap-x-8 justify-items-center">
         <FeatureItem
           icon={TrophyIcon}
           title="High Quality"

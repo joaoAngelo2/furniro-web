@@ -3,6 +3,7 @@ interface PaginationProps {
   itemsPerPage: number;
   currentPage: number;
   onPageChange: (page: number) => void;
+  totalPages: number;
 }
 
 const Pagination = ({
@@ -53,21 +54,22 @@ const Pagination = ({
   const pageButtons = getVisiblePageButtons();
 
   return (
-    <div className="flex justify-center items-center gap-[0.5rem] mt-[2.5rem] mb-[1.88rem] flex-wrap">
-      <button
-        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        className="w-[6.125rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] bg-[#F9F1E7]
-          text-black font-poppins text-[1.25rem] font-light hover:bg-[#e8d9b5] transition-colors"
-        disabled={currentPage === 1}
-      >
-        Previous
-      </button>
-
-      {pageButtons.map((item: number | string, index: number) => (
+    <div className="container mx-auto px-4 md:px-0">
+      <div className="flex justify-center items-center gap-[0.5rem] mt-[2.5rem] mb-[1.88rem] flex-wrap">
         <button
-          key={typeof item === "number" ? item : `dots-${index}`}
-          onClick={() => typeof item === "number" && onPageChange(item)}
-          className={`w-[3.75rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] flex items-center justify-center
+          onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+          className="w-[6.125rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] bg-[#F9F1E7]
+          text-black font-poppins text-[1.25rem] font-light hover:bg-[#e8d9b5] transition-colors"
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+
+        {pageButtons.map((item: number | string, index: number) => (
+          <button
+            key={typeof item === "number" ? item : `dots-${index}`}
+            onClick={() => typeof item === "number" && onPageChange(item)}
+            className={`w-[3.75rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] flex items-center justify-center
             font-poppins text-[1.25rem] font-normal
             ${
               typeof item === "number"
@@ -76,22 +78,23 @@ const Pagination = ({
                   : "bg-[#F9F1E7] text-black hover:bg-[#e8d9b5] transition-colors"
                 : "bg-transparent text-black cursor-default"
             }`}
-          disabled={item === DOTS}
-        >
-          {item}
-        </button>
-      ))}
+            disabled={item === DOTS}
+          >
+            {item}
+          </button>
+        ))}
 
-      <button
-        onClick={() =>
-          currentPage < totalPages && onPageChange(currentPage + 1)
-        }
-        className="w-[6.125rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] bg-[#F9F1E7]
+        <button
+          onClick={() =>
+            currentPage < totalPages && onPageChange(currentPage + 1)
+          }
+          className="w-[6.125rem] h-[3.75rem] flex-shrink-0 rounded-[0.625rem] bg-[#F9F1E7]
           text-black font-poppins text-[1.25rem] font-light hover:bg-[#e8d9b5] transition-colors"
-        disabled={currentPage === totalPages}
-      >
-        Next
-      </button>
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
