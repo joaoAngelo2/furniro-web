@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import ProductAdditionalInfo from "./ProductAdditionalInfo";
 import ProductDescription from "./ProductDescription";
+import Header from "../../components/Header";
 
 interface Product {
   id: string;
@@ -120,6 +121,7 @@ const SingleProductPage: React.FC = () => {
 
   return (
     <div>
+      <Header></Header>
       <div className="text-sm text-prata mb-8 flex items-center bg-primary w-full h-24 font-poppins ">
         <div className="flex items-center container mx-auto space-x-4 justify-center md:justify-start">
           <Link to="/" className="hover:text-secundary">
