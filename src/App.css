@@ -133,6 +133,10 @@
   --tw-content: '';
 }
 
+body{
+  outline: 1px solid red !important;
+}
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.

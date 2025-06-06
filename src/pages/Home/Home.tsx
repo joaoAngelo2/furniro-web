@@ -10,12 +10,12 @@ const Home = () => {
             <PromoBanner/>
         </section>
         <section>
-        <div className='md:h-[122rem] xl:h-[42rem] w-screen font-poppins'>
+        <div className='md:h-[122rem] xl:h-[42rem] sm:h-[122rem] w-screen font-poppins'>
             <div className='w-screen text-center mb-8'>
                 <p className='text-3xl font-bold text-zinc-800 '>Browse The Range</p>
                 <p className="text-xl font-normal text-stone-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div className='flex flex-col max-w-screen-xl lg:flex-row xl:w-[70rem] md:w-[78rem] lg:w-[62rem] items-center mx-auto justify-between'>
+            <div className='flex flex-col max-w-screen-xl lg:flex-row w-screen  items-center mx-auto justify-between'>
                 <CategoryCard imageClass='bg-dining-img' title="Dining" to="/shop/dining"/>
                 <CategoryCard imageClass='bg-living-img' title="Living" to="/shop/living"/>
                 <CategoryCard imageClass='bg-bedroom-img' title="Bedroom" to="/shop/bedroom"/>
@@ -24,7 +24,7 @@ const Home = () => {
         </section>
         <section>
             {/*colocar os componentes reutilizaveis */}
-            <div className='w-screen text-center mb-8'>
+            <div className='w-screen text-center mb-8 md:h-56 xl:h-96'>
                 <p className='text-3xl font-bold text-zinc-800 '>Our Products</p>
             </div>
             <Link to={'/shop'}>
