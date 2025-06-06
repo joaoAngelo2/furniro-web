@@ -112,10 +112,16 @@ const SingleProductPage: React.FC = () => {
     return <div className="text-center py-20">Produto não encontrado.</div>;
   }
 
+  // Define o rate do produto, padrão para 0 se não existir
+  const productRate = product.rate || 0;
+  // Cria arrays para estrelas cheias e vazias
+  const fullStars = Array(productRate).fill("★");
+  const emptyStars = Array(5 - productRate).fill("☆");
+
   return (
     <div>
-      <div className="text-sm text-prata mb-8 flex items-center bg-primary w-full h-24 font-poppins">
-        <div className="flex items-center container mx-auto space-x-4 ">
+      <div className="text-sm text-prata mb-8 flex items-center bg-primary w-full h-24 font-poppins ">
+        <div className="flex items-center container mx-auto space-x-4 justify-center md:justify-start">
           <Link to="/" className="hover:text-secundary">
             Home
           </Link>
@@ -133,7 +139,7 @@ const SingleProductPage: React.FC = () => {
           </span>
         </div>
       </div>
-      <div className="container mx-auto font-poppins">
+      <div className="container mx-auto font-poppins px-3 md:px-0">
         <div className="flex flex-col lg:flex-row gap-8 pb-12">
           {/* Coluna Esquerda: Imagens */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row gap-4">
@@ -166,20 +172,26 @@ const SingleProductPage: React.FC = () => {
           {/* Coluna Direita: Detalhes do Produto */}
           <div className="w-full lg:w-1/2">
             <h1 className="text-5xl text-black mb-2">{product.name}</h1>
-            <p className="text-gray-600 text-2xl font-medium mb-4">
-              Rs. {product.price.toLocaleString("en-IN")}
+            <p className="text-prata text-2xl font-medium mb-4 pt-1">
+              Rs. {product.price.toLocaleString("pt-BR")}
             </p>{" "}
             {/* Avaliação */}
             <div className="flex items-center mb-4">
-              {/* Ícones de estrela*/}
               <div className="flex text-yellow-500">
-                <span className="text-2xl">★</span>
-                <span className="text-2xl">★</span>
-                <span className="text-2xl">★</span>
-                <span className="text-2xl">★</span>
-                <span className="text-2xl">☆</span>
+                {/* Estrelas cheias */}
+                {fullStars.map((star, index) => (
+                  <span key={`full-${index}`} className="text-2xl">
+                    {star}
+                  </span>
+                ))}
+                {/* Estrelas vazias */}
+                {emptyStars.map((star, index) => (
+                  <span key={`empty-${index}`} className="text-2xl">
+                    {star}
+                  </span>
+                ))}
               </div>
-              <span className="ml-4 text-gray-500 text-sm">
+              <span className="ml-4 text-prata text-sm border-l-2 pl-4">
                 5 Customer Review
               </span>
             </div>
@@ -216,7 +228,9 @@ const SingleProductPage: React.FC = () => {
                     <button
                       key={color}
                       className={`w-8 h-8 rounded-full border-2 ${
-                        selectedColor === color ? "border" : "border-none"
+                        selectedColor === color
+                          ? "border-secundary" // Use secundary para a borda do selecionado
+                          : "border-gray-200" // Cor da borda padrão
                       }`}
                       style={{ backgroundColor: color.toLowerCase() }}
                       onClick={() => setSelectedColor(color)}

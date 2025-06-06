@@ -28,12 +28,14 @@ function App() {
                   Bem-vindo à Furniro!
                 </h1>
                 <p className="text-lg">Acesse a página de um produto:</p>
-                <Link to="/product/1" className="text-blue-600 hover:underline">
+                <Link
+                  to="/product/SS0000"
+                  className="text-blue-600 hover:underline"
+                >
                   Ver Produto 1
                 </Link>{" "}
                 {/* Exemplo de link para testar */}
-                <p className="text-sm mt-4">
-                </p>
+                <p className="text-sm mt-4"></p>
               </div>
             }
           />
