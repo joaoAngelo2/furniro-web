@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import ProductAdditionalInfo from "./ProductAdditionalInfo";
+import ProductDescription from "./ProductDescription";
 
 interface Product {
   id: string;
   name: string;
+  subtitle?: string; // Adicionado
+  rate?: number; // Adicionado
   price: number;
+  originalPrice?: number; // Adicionado
+  discount?: number; // Adicionado
   description: string;
   longDescription?: string;
   images: string[];
   descriptionImages?: string[];
+  thumbnail?: string; // Adicionado
   category: string;
   sku: string;
   tags: string[];
@@ -34,6 +41,9 @@ const SingleProductPage: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [quantity, setQuantity] = useState<number>(1);
   const [showToast, setShowToast] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<"description" | "additional-info">(
+    "description"
+  );
 
   // --- Função para exibir o Toast ---
   const triggerToast = (message: string) => {
@@ -104,15 +114,15 @@ const SingleProductPage: React.FC = () => {
 
   return (
     <div>
-      <div className="text-sm text-gray-500 mb-8 flex items-center bg-primary w-full h-24 font-poppins">
-        <div className="flex items-center container mx-auto space-x-4">
-          <Link to="/" className="hover:text-orange-500">
+      <div className="text-sm text-prata mb-8 flex items-center bg-primary w-full h-24 font-poppins">
+        <div className="flex items-center container mx-auto space-x-4 ">
+          <Link to="/" className="hover:text-secundary">
             Home
           </Link>
           <span className="mx-2">
             <img className="w-1.5" src="/src/assets/Vector.svg" alt="" />
           </span>
-          <Link to="/shop" className="hover:text-orange-500">
+          <Link to="/shop" className="hover:text-secundary">
             Shop
           </Link>
           <span className="mx-2">
@@ -124,7 +134,7 @@ const SingleProductPage: React.FC = () => {
         </div>
       </div>
       <div className="container mx-auto font-poppins">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 pb-12">
           {/* Coluna Esquerda: Imagens */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row gap-4">
             {/* Imagens em miniatura */}
@@ -136,7 +146,7 @@ const SingleProductPage: React.FC = () => {
                   alt={`${product.name} - View ${index + 1}`}
                   className={`w-24 h-24 object-cover cursor-pointer rounded-lg ${
                     activeImage === img
-                      ? "bg-primary border border-orange-500"
+                      ? "bg-primary border border-secundary"
                       : "bg-primary"
                   }`}
                   onClick={() => setActiveImage(img)}
@@ -298,7 +308,94 @@ const SingleProductPage: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="border-t border-gray-200 pt-10 mt-10">
+          {" "}
+          {/* Linha divisória e espaçamento superior */}
+          <div className="container mx-auto px-4">
+            {" "}
+            {/* Container para centralizar o conteúdo das abas */}
+            {/* Abas de Navegação (botões) */}
+            <div className="flex justify-center gap-16 mb-8 text-xl ">
+              <button
+                className={`pb-2 ${
+                  activeTab === "description"
+                    ? "text-black font-medium"
+                    : "text-gray-400 hover:text-black"
+                }`}
+                onClick={() => setActiveTab("description")}
+              >
+                Description
+              </button>
+              <button
+                className={`pb-2 ${
+                  activeTab === "additional-info"
+                    ? "text-black font-medium"
+                    : "text-gray-400 hover:text-black"
+                }`}
+                onClick={() => setActiveTab("additional-info")}
+              >
+                Additional Information
+              </button>
+            </div>
+            {/* Conteúdo das Abas (renderização condicional) */}
+            <div>
+              {activeTab === "description" && product && (
+                <ProductDescription
+                  // Passa a descrição mais longa se existir, senão a curta
+                  description={product.longDescription || product.description}
+                  // Pega as imagens específicas da descrição (se houver), senão as 2 primeiras do array principal
+                  images={
+                    product.descriptionImages || product.images.slice(0, 2)
+                  }
+                />
+              )}
+              {activeTab === "additional-info" && product && (
+                <ProductAdditionalInfo
+                  product={product} // Passa o objeto produto completo para a aba de informações adicionais
+                />
+              )}
+              {/* Adicione o componente de Reviews aqui se activeTab for 'reviews' */}
+            </div>
+          </div>
+        </div>
+        <div className="border-t container mx-auto px-4">
+          <div className="px-4 mb-14">
+            <h2 className="flex justify-center font-medium text-black text-4xl mt-14">
+              Related Products
+            </h2>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-14">
+              {" "}
+              {/* Grid para os cards */}
+              {/* Aqui você vai mapear os `relatedProducts` e renderizar o `ProductCard` */}
+              {/* Exemplo:
+      {relatedProducts.map(product => (
+        <ProductCard
+          key={product.id}
+          id={product.id}
+          name={product.name}
+          type={product.type}
+          price={product.price}
+          oldPrice={product.oldPrice}
+          discount={product.discount}
+          images={product.images}
+          tags={product.tags}
+        />
+      ))}
+      */}
+            </div>
+
+            <div className="flex justify-center">
+              <Link
+                to="/shop"
+                className="h-[48px] w-[245px] border-solid border-[1px] font-semibold text-secundary border-secundary hover:text-white hover:bg-secundary transition-all flex justify-center items-center"
+              >
+                Show More
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Fim da Seção de Abas */}
         {/* Toast de Feedback */}
         {showToast && (
           <div className="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-xl animate-fade-in-up">

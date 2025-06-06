@@ -1,36 +1,101 @@
+// src/pages/SingleProduct/ProductAdditionalInfo.tsx
 import React from "react";
 
-interface ProductDescriptionProps {
-  description: string;
-  images: string[];
+// Reutilize ou defina uma interface para os dados específicos desta aba
+interface Product {
+  // Pode ser uma interface menor ou a mesma do SingleProductPage
+  id: string;
+  category: string;
+  sku: string;
+  tags: string[];
+  materials?: string;
+  dimensions?: { length: string; width: string; height: string };
+  weight?: string;
+  assembly?: string;
 }
 
-const ProductDescription: React.FC<ProductDescriptionProps> = ({
-  description,
-  images,
-}) => {
-  const paragraphs = description.split("\n\n");
+interface ProductAdditionalInfoProps {
+  product: Product;
+}
 
+const ProductAdditionalInfo: React.FC<ProductAdditionalInfoProps> = ({
+  product,
+}) => {
   return (
     <div className="text-gray-700 leading-relaxed mb-10">
-      {paragraphs.map((p, index) => (
-        <p key={index} className="mb-4">
-          {p}
-        </p>
-      ))}
-
-      <div className="flex flex-col md:flex-row gap-8 mt-8">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Imagem da Descrição ${index + 1}`}
-            className="w-full md:w-1/2 object-cover rounded-lg"
-          />
-        ))}
-      </div>
+      <table className="min-w-full bg-white border border-gray-200 ">
+        <tbody>
+          {product.sku && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                SKU:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.sku}
+              </td>
+            </tr>
+          )}
+          {product.category && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Category:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.category}
+              </td>
+            </tr>
+          )}
+          {product.tags && product.tags.length > 0 && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Tags:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.tags.join(", ")}
+              </td>
+            </tr>
+          )}
+          {product.materials && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Materials:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.materials}
+              </td>
+            </tr>
+          )}
+          {product.dimensions && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Dimensions (LxWxH):
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">{`${product.dimensions.length} x ${product.dimensions.width} x ${product.dimensions.height}`}</td>
+            </tr>
+          )}
+          {product.weight && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Weight:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.weight}
+              </td>
+            </tr>
+          )}
+          {product.assembly && (
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-200 font-medium">
+                Assembly:
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200">
+                {product.assembly}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   );
 };
-
-export default ProductDescription;
+export default ProductAdditionalInfo;

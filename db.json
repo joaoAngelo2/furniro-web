@@ -1,34 +1,1484 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Asgaard sofa",
-      "price": 250000,
-      "description": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound...",
-      "longDescription": "Embodying the raw, wayward spirit of rock 'n' roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.\n\nWeighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
+      "id": "SS001",
+      "name": "Slytherine",
+      "subtitle": "Stylish cafe chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A stylish and comfortable cafe chair with a minimalist design, perfect for modern spaces.",
+      "longDescription": "The Slytherine chair embodies minimalist elegance, featuring a sleek, durable frame and comfortable seating. Designed for cafe and contemporary dining settings, it offers ergonomic support and a lightweight build for easy rearrangement. Its clean lines complement any modern decor, making it a versatile addition to your space.\n\nCrafted from high-quality materials, this chair is built to withstand daily use while maintaining its aesthetic appeal. The subtle curves provide surprising comfort, making it suitable for long conversations or quick meals. A perfect blend of style and practicality for your home or business.",
       "images": [
-        "/images/AsgaardSofa.svg",
-        "/images/MayaSofa.svg",
-        "/images/OutdoorSofa.svg",
-        "/images/StuartSofa.svg"
+        "/images/shop-image-1.svg",
+        "/images/slytherine-detail-1.svg",
+        "/images/slytherine-detail-2.svg",
+        "/images/slytherine-detail-3.svg"
       ],
       "descriptionImages": [
-        "/images/sofa_description_1.png",
-        "/images/sofa_description_2.png"
+        "/images/slytherine-desc-1.svg",
+        "/images/slytherine-desc-2.svg"
       ],
-      "category": "Sofas",
-      "sku": "SS001",
-      "tags": ["Sofa", "Chair", "Home", "Shop"],
-      "colors": ["#816DFA", "#000000", "#B88E2F"],
-      "sizes": ["L", "XL", "XS"],
-      "materials": "Solid Oak, Fabric Cushion, High-Density Foam",
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "SC001",
+      "tags": ["Chair", "Cafe", "Modern", "Stylish"],
+      "colors": ["#816DFA", "#000000", "#FFFFFF"],
+      "sizes": ["Standard"],
+      "materials": "Powder-coated steel frame, Faux leather upholstery",
+      "dimensions": { "length": "50 cm", "width": "50 cm", "height": "80 cm" },
+      "weight": "8 kg",
+      "assembly": "Minor assembly required"
+    },
+    {
+      "id": "SS002",
+      "name": "Leviosa",
+      "subtitle": "Stylish cafe chair",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegantly designed chair that combines comfort with a unique aesthetic, perfect for any modern cafe.",
+      "longDescription": "The Leviosa chair is a testament to modern design, offering both visual appeal and exceptional comfort. Its unique shape provides a supportive backrest, while the sturdy base ensures stability. Ideal for cafe environments or contemporary dining rooms, this chair is a statement piece that doesn't compromise on functionality.\n\nCrafted with attention to detail, the smooth finish and durable materials ensure longevity. The chair's lightweight nature allows for easy rearrangement, adapting to various layouts and needs. A blend of innovation and comfort for discerning tastes.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-detail-1.svg",
+        "/images/leviosa-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-desc-1.svg",
+        "/images/leviosa-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "dining",
+      "sku": "LC002",
+      "tags": ["Chair", "Cafe", "Dining", "Modern"],
+      "colors": ["#F9F1E7", "#B88E2F", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood legs, Molded plastic seat",
+      "dimensions": { "length": "55 cm", "width": "52 cm", "height": "85 cm" },
+      "weight": "7 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS003",
+      "name": "Lolito",
+      "subtitle": "Luxury big sofa",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A luxurious and spacious sofa, designed for ultimate comfort and elegance in large living spaces.",
+      "longDescription": "The Lolito sofa redefines luxury and comfort, featuring generous seating and plush cushions. Its robust frame and high-quality upholstery ensure durability and a sophisticated look. Perfect for grand living rooms, it invites relaxation and adds a touch of opulence to any decor.\n\nEach element of the Lolito sofa is crafted to perfection, from its sturdy internal structure to its soft, inviting fabric. The modular design allows for flexible configurations, adapting to different room sizes and preferences. A centerpiece that promises both comfort and style for years to come.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-detail-1.svg",
+        "/images/lolito-detail-2.svg",
+        "/images/lolito-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-desc-1.svg",
+        "/images/lolito-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "LS003",
+      "tags": ["Sofa", "Luxury", "Large", "Comfort"],
+      "colors": ["#C0C0C0", "#000000", "#8B4513"],
+      "sizes": ["XL"],
+      "materials": "Solid wood frame, High-density foam, Velvet fabric",
       "dimensions": {
-        "length": "250 cm",
-        "width": "100 cm",
+        "length": "300 cm",
+        "width": "120 cm",
         "height": "90 cm"
       },
-      "weight": "80 kg",
-      "assembly": "Requires self-assembly"
+      "weight": "120 kg",
+      "assembly": "Minimal assembly required"
+    },
+    {
+      "id": "SS004",
+      "name": "Respira",
+      "subtitle": "Outdoor bar table and stool",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A durable and stylish outdoor bar table with accompanying stools, designed for contemporary outdoor living.",
+      "longDescription": "The Respira outdoor bar set is engineered for durability and style, perfect for enhancing your patio or balcony. Crafted from weather-resistant materials, it offers a sturdy table and comfortable stools for outdoor dining or entertaining. Its modern design blends seamlessly with various outdoor aesthetics.\n\nBuilt to withstand the elements, this set requires minimal maintenance, ensuring long-lasting beauty and function. The stools are designed for comfort, making it a great spot for morning coffee or evening cocktails. Elevate your outdoor living with this chic and practical bar set.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-detail-1.svg",
+        "/images/respira-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-desc-1.svg",
+        "/images/respira-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "OT004",
+      "tags": ["Outdoor", "Table", "Stool", "New"],
+      "colors": ["#333333", "#D3D3D3"],
+      "sizes": ["Standard"],
+      "materials": "Aluminium frame, Woven synthetic rattan",
+      "dimensions": { "length": "80 cm", "width": "80 cm", "height": "100 cm" },
+      "weight": "25 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS005",
+      "name": "Slytherine Lounge",
+      "subtitle": "Comfortable lounge chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A spacious and inviting lounge chair, perfect for relaxation in your living room or study.",
+      "longDescription": "This Slytherine Lounge chair offers unparalleled comfort with its deep seating and soft upholstery. Its contemporary design fits perfectly in any modern living space, providing a cozy nook for reading or unwinding. The sturdy construction ensures lasting durability and support.\n\nFeaturing a high-resilience foam core wrapped in plush fabric, this chair maintains its shape and comfort over time. The solid wood base adds a touch of warmth and stability, making it both beautiful and functional. A perfect addition to your home for ultimate relaxation.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-lounge-detail-1.svg",
+        "/images/slytherine-lounge-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-lounge-desc-1.svg",
+        "/images/slytherine-lounge-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "LC005",
+      "tags": ["Chair", "Lounge", "Comfort", "Modern"],
+      "colors": ["#A9A9A9", "#F5DEB3", "#8B4513"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "90 cm", "width": "85 cm", "height": "85 cm" },
+      "weight": "20 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS006",
+      "name": "Leviosa Ottoman",
+      "subtitle": "Versatile ottoman stool",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A multi-functional ottoman that serves as extra seating, a footrest, or a stylish accent piece.",
+      "longDescription": "The Leviosa Ottoman is designed for versatility and comfort, making it a valuable addition to any room. Use it as a comfortable footrest, extra seating when guests arrive, or even a makeshift coffee table with a tray. Its compact size and elegant design ensure it fits seamlessly into various decor styles.\n\nConstructed with a sturdy internal frame and upholstered in durable fabric, this ottoman is built for everyday use. Its lightweight nature allows for easy repositioning, adapting to your changing needs. A practical and stylish piece that enhances both comfort and functionality in your living space.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-ottoman-detail-1.svg",
+        "/images/leviosa-ottoman-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-ottoman-desc-1.svg",
+        "/images/leviosa-ottoman-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "living",
+      "sku": "OT006",
+      "tags": ["Ottoman", "Stool", "Versatile", "Accent"],
+      "colors": ["#EFEFEF", "#A9A9A9"],
+      "sizes": ["Standard"],
+      "materials": "Wood frame, Fabric upholstery, Foam",
+      "dimensions": { "length": "60 cm", "width": "60 cm", "height": "40 cm" },
+      "weight": "10 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS007",
+      "name": "Lolito Bookshelf",
+      "subtitle": "Contemporary wooden bookshelf",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A spacious and modern wooden bookshelf, perfect for organizing your books and decorative items.",
+      "longDescription": "The Lolito Bookshelf combines ample storage with sleek, contemporary design. Crafted from high-quality wood, it offers multiple shelves to display your book collection, decor, or personal treasures. Its minimalist aesthetic allows it to blend seamlessly into various room styles, from modern to traditional.\n\nDesigned for stability and durability, this bookshelf is easy to assemble and maintain. The open-back design allows for easy cable management if used for electronics, and its robust construction supports a substantial weight capacity. A functional and elegant piece for any home or office.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-bookshelf-detail-1.svg",
+        "/images/lolito-bookshelf-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-bookshelf-desc-1.svg",
+        "/images/lolito-bookshelf-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "BS007",
+      "tags": ["Bookshelf", "Storage", "Wood", "Modern"],
+      "colors": ["#8B4513", "#D2B48C"],
+      "sizes": ["Large", "Medium"],
+      "materials": "Solid wood, Veneer",
+      "dimensions": {
+        "length": "120 cm",
+        "width": "30 cm",
+        "height": "180 cm"
+      },
+      "weight": "45 kg",
+      "assembly": "Self-assembly required"
+    },
+    {
+      "id": "SS008",
+      "name": "Respira Console Table",
+      "subtitle": "Minimalist nightstand",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A minimalist and elegant console table, perfect for entryways or as a stylish accent piece.",
+      "longDescription": "The Respira Console Table is a sleek, minimalist design that adds functional style to any space. Its slim profile makes it ideal for hallways, entryways, or behind a sofa, offering a convenient surface for essentials without occupying much space. The clean lines and neutral tones ensure it complements diverse interiors.\n\nConstructed with a sturdy metal frame and a smooth tabletop, this console table is built for stability and longevity. Its simple assembly makes it easy to set up, providing instant elegance and utility. A perfect piece for organizing your essentials and enhancing your home's aesthetic.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-console-detail-1.svg",
+        "/images/respira-console-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-console-desc-1.svg",
+        "/images/respira-console-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "CT008",
+      "tags": ["Console", "Table", "Minimalist", "Accent", "New"],
+      "colors": ["#D3D3D3", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal frame, Engineered wood top",
+      "dimensions": { "length": "100 cm", "width": "30 cm", "height": "75 cm" },
+      "weight": "15 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS009",
+      "name": "Slytherine Dining Chair",
+      "subtitle": "Ergonomic dining chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "An ergonomically designed dining chair that offers superior comfort and style for your dining area.",
+      "longDescription": "The Slytherine Dining Chair is crafted for long-lasting comfort and sophisticated style, making every meal a more enjoyable experience. Its ergonomic backrest provides excellent support, while the cushioned seat ensures plush seating. The chair's design is versatile, fitting well with various dining table styles.\n\nBuilt with a durable frame and upholstered in a stain-resistant fabric, this dining chair is designed for everyday family life. Its clean lines and understated elegance make it a perfect addition to modern and classic dining spaces. Easy to clean and maintain, ensuring beauty and functionality for years.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-dining-detail-1.svg",
+        "/images/slytherine-dining-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-dining-desc-1.svg",
+        "/images/slytherine-dining-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "dining",
+      "sku": "DC009",
+      "tags": ["Chair", "Dining", "Ergonomic"],
+      "colors": ["#A9A9A9", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "50 cm", "width": "55 cm", "height": "85 cm" },
+      "weight": "9 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS010",
+      "name": "Leviosa Bedside Table",
+      "subtitle": "Compact bedside table",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A compact and stylish bedside table, perfect for small spaces, offering convenience and modern design.",
+      "longDescription": "The Leviosa Bedside Table is a compact yet functional piece, ideal for keeping essentials close at hand in your bedroom. Its sleek design and small footprint make it perfect for smaller rooms, while its sturdy construction ensures durability. A convenient drawer provides discreet storage for personal items.\n\nCrafted from high-quality engineered wood with a smooth finish, this table is easy to clean and maintain. The minimalist aesthetic allows it to blend seamlessly with various bedroom decors, from contemporary to classic. A practical and elegant addition that enhances your bedside convenience.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-bedside-detail-1.svg",
+        "/images/leviosa-bedside-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-bedside-desc-1.svg",
+        "/images/leviosa-bedside-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "bedroom",
+      "sku": "BT010",
+      "tags": ["Table", "Bedside", "Compact", "Bedroom"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Engineered wood, Metal legs",
+      "dimensions": { "length": "40 cm", "width": "30 cm", "height": "50 cm" },
+      "weight": "5 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS011",
+      "name": "Lolito Coffee Table",
+      "subtitle": "Contemporary coffee table",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A large and stylish coffee table, designed to be the centerpiece of your living room, offering ample surface area.",
+      "longDescription": "The Lolito Coffee Table is a bold statement piece for any modern living room, combining expansive surface area with sophisticated design. Crafted from premium materials, its sturdy construction and sleek finish make it both functional and visually striking. Perfect for entertaining or daily use, it anchors your seating area with elegance.\n\nFeaturing a durable top ideal for beverages, books, and decor, this coffee table is designed for lasting beauty. Its low profile and strong build make it a practical yet luxurious addition, inviting social gatherings and comfortable living. Elevate your living space with this contemporary masterpiece.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-coffee-detail-1.svg",
+        "/images/lolito-coffee-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-coffee-desc-1.svg",
+        "/images/lolito-coffee-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "living",
+      "sku": "CT011",
+      "tags": ["Table", "Coffee", "Living Room", "Modern"],
+      "colors": ["#000000", "#D2B48C"],
+      "sizes": ["Large"],
+      "materials": "Tempered glass, Stainless steel frame",
+      "dimensions": { "length": "120 cm", "width": "70 cm", "height": "40 cm" },
+      "weight": "30 kg",
+      "assembly": "Moderate assembly required"
+    },
+    {
+      "id": "SS012",
+      "name": "Respira Floor Lamp",
+      "subtitle": "Elegant floor lamp",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegant floor lamp with a minimalist design, providing ambient lighting and a touch of modern sophistication.",
+      "longDescription": "The Respira Floor Lamp offers refined illumination with its slender profile and elegant design. Perfect for living rooms, studies, or bedrooms, it casts a warm, inviting glow that enhances the ambiance of any space. Its minimalist aesthetic ensures it complements a wide range of interior styles without overcrowding.\n\nConstructed with a sturdy metal base and a durable fabric shade, this lamp is built for stability and long-term use. The simple foot-switch operation adds convenience, while its sleek lines provide a contemporary touch. A functional and beautiful addition that brightens your home with understated elegance.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-lamp-detail-1.svg",
+        "/images/respira-lamp-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-lamp-desc-1.svg",
+        "/images/respira-lamp-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "bedroom",
+      "sku": "FL012",
+      "tags": ["Lamp", "Lighting", "Minimalist", "Bedroom", "New"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal, Fabric shade",
+      "dimensions": { "length": "30 cm", "width": "30 cm", "height": "160 cm" },
+      "weight": "6 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS013",
+      "name": "Slytherine",
+      "subtitle": "Stylish cafe chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A stylish and comfortable cafe chair with a minimalist design, perfect for modern spaces.",
+      "longDescription": "The Slytherine chair embodies minimalist elegance, featuring a sleek, durable frame and comfortable seating. Designed for cafe and contemporary dining settings, it offers ergonomic support and a lightweight build for easy rearrangement. Its clean lines complement any modern decor, making it a versatile addition to your space.\n\nCrafted from high-quality materials, this chair is built to withstand daily use while maintaining its aesthetic appeal. The subtle curves provide surprising comfort, making it suitable for long conversations or quick meals. A perfect blend of style and practicality for your home or business.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-detail-1.svg",
+        "/images/slytherine-detail-2.svg",
+        "/images/slytherine-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-desc-1.svg",
+        "/images/slytherine-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "SC001",
+      "tags": ["Chair", "Cafe", "Modern", "Stylish"],
+      "colors": ["#816DFA", "#000000", "#FFFFFF"],
+      "sizes": ["Standard"],
+      "materials": "Powder-coated steel frame, Faux leather upholstery",
+      "dimensions": { "length": "50 cm", "width": "50 cm", "height": "80 cm" },
+      "weight": "8 kg",
+      "assembly": "Minor assembly required"
+    },
+    {
+      "id": "SS014",
+      "name": "Leviosa",
+      "subtitle": "Stylish cafe chair",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegantly designed chair that combines comfort with a unique aesthetic, perfect for any modern cafe.",
+      "longDescription": "The Leviosa chair is a testament to modern design, offering both visual appeal and exceptional comfort. Its unique shape provides a supportive backrest, while the sturdy base ensures stability. Ideal for cafe environments or contemporary dining rooms, this chair is a statement piece that doesn't compromise on functionality.\n\nCrafted with attention to detail, the smooth finish and durable materials ensure longevity. The chair's lightweight nature allows for easy rearrangement, adapting to various layouts and needs. A blend of innovation and comfort for discerning tastes.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-detail-1.svg",
+        "/images/leviosa-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-desc-1.svg",
+        "/images/leviosa-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "dining",
+      "sku": "LC002",
+      "tags": ["Chair", "Cafe", "Dining", "Modern"],
+      "colors": ["#F9F1E7", "#B88E2F", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood legs, Molded plastic seat",
+      "dimensions": { "length": "55 cm", "width": "52 cm", "height": "85 cm" },
+      "weight": "7 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS015",
+      "name": "Lolito",
+      "subtitle": "Luxury big sofa",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A luxurious and spacious sofa, designed for ultimate comfort and elegance in large living spaces.",
+      "longDescription": "The Lolito sofa redefines luxury and comfort, featuring generous seating and plush cushions. Its robust frame and high-quality upholstery ensure durability and a sophisticated look. Perfect for grand living rooms, it invites relaxation and adds a touch of opulence to any decor.\n\nEach element of the Lolito sofa is crafted to perfection, from its sturdy internal structure to its soft, inviting fabric. The modular design allows for flexible configurations, adapting to different room sizes and preferences. A centerpiece that promises both comfort and style for years to come.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-detail-1.svg",
+        "/images/lolito-detail-2.svg",
+        "/images/lolito-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-desc-1.svg",
+        "/images/lolito-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "LS003",
+      "tags": ["Sofa", "Luxury", "Large", "Comfort"],
+      "colors": ["#C0C0C0", "#000000", "#8B4513"],
+      "sizes": ["XL"],
+      "materials": "Solid wood frame, High-density foam, Velvet fabric",
+      "dimensions": {
+        "length": "300 cm",
+        "width": "120 cm",
+        "height": "90 cm"
+      },
+      "weight": "120 kg",
+      "assembly": "Minimal assembly required"
+    },
+    {
+      "id": "SS016",
+      "name": "Respira",
+      "subtitle": "Outdoor bar table and stool",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A durable and stylish outdoor bar table with accompanying stools, designed for contemporary outdoor living.",
+      "longDescription": "The Respira outdoor bar set is engineered for durability and style, perfect for enhancing your patio or balcony. Crafted from weather-resistant materials, it offers a sturdy table and comfortable stools for outdoor dining or entertaining. Its modern design blends seamlessly with various outdoor aesthetics.\n\nBuilt to withstand the elements, this set requires minimal maintenance, ensuring long-lasting beauty and function. The stools are designed for comfort, making it a great spot for morning coffee or evening cocktails. Elevate your outdoor living with this chic and practical bar set.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-detail-1.svg",
+        "/images/respira-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-desc-1.svg",
+        "/images/respira-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "OT004",
+      "tags": ["Outdoor", "Table", "Stool", "New"],
+      "colors": ["#333333", "#D3D3D3"],
+      "sizes": ["Standard"],
+      "materials": "Aluminium frame, Woven synthetic rattan",
+      "dimensions": { "length": "80 cm", "width": "80 cm", "height": "100 cm" },
+      "weight": "25 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS017",
+      "name": "Slytherine Lounge",
+      "subtitle": "Comfortable lounge chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A spacious and inviting lounge chair, perfect for relaxation in your living room or study.",
+      "longDescription": "This Slytherine Lounge chair offers unparalleled comfort with its deep seating and soft upholstery. Its contemporary design fits perfectly in any modern living space, providing a cozy nook for reading or unwinding. The sturdy construction ensures lasting durability and support.\n\nFeaturing a high-resilience foam core wrapped in plush fabric, this chair maintains its shape and comfort over time. The solid wood base adds a touch of warmth and stability, making it both beautiful and functional. A perfect addition to your home for ultimate relaxation.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-lounge-detail-1.svg",
+        "/images/slytherine-lounge-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-lounge-desc-1.svg",
+        "/images/slytherine-lounge-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "LC005",
+      "tags": ["Chair", "Lounge", "Comfort", "Modern"],
+      "colors": ["#A9A9A9", "#F5DEB3", "#8B4513"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "90 cm", "width": "85 cm", "height": "85 cm" },
+      "weight": "20 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS018",
+      "name": "Leviosa Ottoman",
+      "subtitle": "Versatile ottoman stool",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A multi-functional ottoman that serves as extra seating, a footrest, or a stylish accent piece.",
+      "longDescription": "The Leviosa Ottoman is designed for versatility and comfort, making it a valuable addition to any room. Use it as a comfortable footrest, extra seating when guests arrive, or even a makeshift coffee table with a tray. Its compact size and elegant design ensure it fits seamlessly into various decor styles.\n\nConstructed with a sturdy internal frame and upholstered in durable fabric, this ottoman is built for everyday use. Its lightweight nature allows for easy repositioning, adapting to your changing needs. A practical and stylish piece that enhances both comfort and functionality in your living space.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-ottoman-detail-1.svg",
+        "/images/leviosa-ottoman-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-ottoman-desc-1.svg",
+        "/images/leviosa-ottoman-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "living",
+      "sku": "OT006",
+      "tags": ["Ottoman", "Stool", "Versatile", "Accent"],
+      "colors": ["#EFEFEF", "#A9A9A9"],
+      "sizes": ["Standard"],
+      "materials": "Wood frame, Fabric upholstery, Foam",
+      "dimensions": { "length": "60 cm", "width": "60 cm", "height": "40 cm" },
+      "weight": "10 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS019",
+      "name": "Lolito Bookshelf",
+      "subtitle": "Contemporary wooden bookshelf",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A spacious and modern wooden bookshelf, perfect for organizing your books and decorative items.",
+      "longDescription": "The Lolito Bookshelf combines ample storage with sleek, contemporary design. Crafted from high-quality wood, it offers multiple shelves to display your book collection, decor, or personal treasures. Its minimalist aesthetic allows it to blend seamlessly into various room styles, from modern to traditional.\n\nDesigned for stability and durability, this bookshelf is easy to assemble and maintain. The open-back design allows for easy cable management if used for electronics, and its robust construction supports a substantial weight capacity. A functional and elegant piece for any home or office.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-bookshelf-detail-1.svg",
+        "/images/lolito-bookshelf-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-bookshelf-desc-1.svg",
+        "/images/lolito-bookshelf-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "BS007",
+      "tags": ["Bookshelf", "Storage", "Wood", "Modern"],
+      "colors": ["#8B4513", "#D2B48C"],
+      "sizes": ["Large", "Medium"],
+      "materials": "Solid wood, Veneer",
+      "dimensions": {
+        "length": "120 cm",
+        "width": "30 cm",
+        "height": "180 cm"
+      },
+      "weight": "45 kg",
+      "assembly": "Self-assembly required"
+    },
+    {
+      "id": "SS020",
+      "name": "Respira Console Table",
+      "subtitle": "Minimalist nightstand",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A minimalist and elegant console table, perfect for entryways or as a stylish accent piece.",
+      "longDescription": "The Respira Console Table is a sleek, minimalist design that adds functional style to any space. Its slim profile makes it ideal for hallways, entryways, or behind a sofa, offering a convenient surface for essentials without occupying much space. The clean lines and neutral tones ensure it complements diverse interiors.\n\nConstructed with a sturdy metal frame and a smooth tabletop, this console table is built for stability and longevity. Its simple assembly makes it easy to set up, providing instant elegance and utility. A perfect piece for organizing your essentials and enhancing your home's aesthetic.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-console-detail-1.svg",
+        "/images/respira-console-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-console-desc-1.svg",
+        "/images/respira-console-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "CT008",
+      "tags": ["Console", "Table", "Minimalist", "Accent", "New"],
+      "colors": ["#D3D3D3", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal frame, Engineered wood top",
+      "dimensions": { "length": "100 cm", "width": "30 cm", "height": "75 cm" },
+      "weight": "15 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS021",
+      "name": "Slytherine Dining Chair",
+      "subtitle": "Ergonomic dining chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "An ergonomically designed dining chair that offers superior comfort and style for your dining area.",
+      "longDescription": "The Slytherine Dining Chair is crafted for long-lasting comfort and sophisticated style, making every meal a more enjoyable experience. Its ergonomic backrest provides excellent support, while the cushioned seat ensures plush seating. The chair's design is versatile, fitting well with various dining table styles.\n\nBuilt with a durable frame and upholstered in a stain-resistant fabric, this dining chair is designed for everyday family life. Its clean lines and understated elegance make it a perfect addition to modern and classic dining spaces. Easy to clean and maintain, ensuring beauty and functionality for years.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-dining-detail-1.svg",
+        "/images/slytherine-dining-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-dining-desc-1.svg",
+        "/images/slytherine-dining-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "dining",
+      "sku": "DC009",
+      "tags": ["Chair", "Dining", "Ergonomic"],
+      "colors": ["#A9A9A9", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "50 cm", "width": "55 cm", "height": "85 cm" },
+      "weight": "9 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS022",
+      "name": "Leviosa Bedside Table",
+      "subtitle": "Compact bedside table",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A compact and stylish bedside table, perfect for small spaces, offering convenience and modern design.",
+      "longDescription": "The Leviosa Bedside Table is a compact yet functional piece, ideal for keeping essentials close at hand in your bedroom. Its sleek design and small footprint make it perfect for smaller rooms, while its sturdy construction ensures durability. A convenient drawer provides discreet storage for personal items.\n\nCrafted from high-quality engineered wood with a smooth finish, this table is easy to clean and maintain. The minimalist aesthetic allows it to blend seamlessly with various bedroom decors, from contemporary to classic. A practical and elegant addition that enhances your bedside convenience.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-bedside-detail-1.svg",
+        "/images/leviosa-bedside-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-bedside-desc-1.svg",
+        "/images/leviosa-bedside-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "bedroom",
+      "sku": "BT010",
+      "tags": ["Table", "Bedside", "Compact", "Bedroom"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Engineered wood, Metal legs",
+      "dimensions": { "length": "40 cm", "width": "30 cm", "height": "50 cm" },
+      "weight": "5 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS023",
+      "name": "Lolito Coffee Table",
+      "subtitle": "Contemporary coffee table",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A large and stylish coffee table, designed to be the centerpiece of your living room, offering ample surface area.",
+      "longDescription": "The Lolito Coffee Table is a bold statement piece for any modern living room, combining expansive surface area with sophisticated design. Crafted from premium materials, its sturdy construction and sleek finish make it both functional and visually striking. Perfect for entertaining or daily use, it anchors your seating area with elegance.\n\nFeaturing a durable top ideal for beverages, books, and decor, this coffee table is designed for lasting beauty. Its low profile and strong build make it a practical yet luxurious addition, inviting social gatherings and comfortable living. Elevate your living space with this contemporary masterpiece.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-coffee-detail-1.svg",
+        "/images/lolito-coffee-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-coffee-desc-1.svg",
+        "/images/lolito-coffee-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "living",
+      "sku": "CT011",
+      "tags": ["Table", "Coffee", "Living Room", "Modern"],
+      "colors": ["#000000", "#D2B48C"],
+      "sizes": ["Large"],
+      "materials": "Tempered glass, Stainless steel frame",
+      "dimensions": { "length": "120 cm", "width": "70 cm", "height": "40 cm" },
+      "weight": "30 kg",
+      "assembly": "Moderate assembly required"
+    },
+    {
+      "id": "SS024",
+      "name": "Respira Floor Lamp",
+      "subtitle": "Elegant floor lamp",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegant floor lamp with a minimalist design, providing ambient lighting and a touch of modern sophistication.",
+      "longDescription": "The Respira Floor Lamp offers refined illumination with its slender profile and elegant design. Perfect for living rooms, studies, or bedrooms, it casts a warm, inviting glow that enhances the ambiance of any space. Its minimalist aesthetic ensures it complements a wide range of interior styles without overcrowding.\n\nConstructed with a sturdy metal base and a durable fabric shade, this lamp is built for stability and long-term use. The simple foot-switch operation adds convenience, while its sleek lines provide a contemporary touch. A functional and beautiful addition that brightens your home with understated elegance.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-lamp-detail-1.svg",
+        "/images/respira-lamp-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-lamp-desc-1.svg",
+        "/images/respira-lamp-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "bedroom",
+      "sku": "FL012",
+      "tags": ["Lamp", "Lighting", "Minimalist", "Bedroom", "New"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal, Fabric shade",
+      "dimensions": { "length": "30 cm", "width": "30 cm", "height": "160 cm" },
+      "weight": "6 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS025",
+      "name": "Slytherine",
+      "subtitle": "Stylish cafe chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A stylish and comfortable cafe chair with a minimalist design, perfect for modern spaces.",
+      "longDescription": "The Slytherine chair embodies minimalist elegance, featuring a sleek, durable frame and comfortable seating. Designed for cafe and contemporary dining settings, it offers ergonomic support and a lightweight build for easy rearrangement. Its clean lines complement any modern decor, making it a versatile addition to your space.\n\nCrafted from high-quality materials, this chair is built to withstand daily use while maintaining its aesthetic appeal. The subtle curves provide surprising comfort, making it suitable for long conversations or quick meals. A perfect blend of style and practicality for your home or business.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-detail-1.svg",
+        "/images/slytherine-detail-2.svg",
+        "/images/slytherine-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-desc-1.svg",
+        "/images/slytherine-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "SC001",
+      "tags": ["Chair", "Cafe", "Modern", "Stylish"],
+      "colors": ["#816DFA", "#000000", "#FFFFFF"],
+      "sizes": ["Standard"],
+      "materials": "Powder-coated steel frame, Faux leather upholstery",
+      "dimensions": { "length": "50 cm", "width": "50 cm", "height": "80 cm" },
+      "weight": "8 kg",
+      "assembly": "Minor assembly required"
+    },
+    {
+      "id": "SS026",
+      "name": "Leviosa",
+      "subtitle": "Stylish cafe chair",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegantly designed chair that combines comfort with a unique aesthetic, perfect for any modern cafe.",
+      "longDescription": "The Leviosa chair is a testament to modern design, offering both visual appeal and exceptional comfort. Its unique shape provides a supportive backrest, while the sturdy base ensures stability. Ideal for cafe environments or contemporary dining rooms, this chair is a statement piece that doesn't compromise on functionality.\n\nCrafted with attention to detail, the smooth finish and durable materials ensure longevity. The chair's lightweight nature allows for easy rearrangement, adapting to various layouts and needs. A blend of innovation and comfort for discerning tastes.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-detail-1.svg",
+        "/images/leviosa-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-desc-1.svg",
+        "/images/leviosa-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "dining",
+      "sku": "LC002",
+      "tags": ["Chair", "Cafe", "Dining", "Modern"],
+      "colors": ["#F9F1E7", "#B88E2F", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood legs, Molded plastic seat",
+      "dimensions": { "length": "55 cm", "width": "52 cm", "height": "85 cm" },
+      "weight": "7 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS027",
+      "name": "Lolito",
+      "subtitle": "Luxury big sofa",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A luxurious and spacious sofa, designed for ultimate comfort and elegance in large living spaces.",
+      "longDescription": "The Lolito sofa redefines luxury and comfort, featuring generous seating and plush cushions. Its robust frame and high-quality upholstery ensure durability and a sophisticated look. Perfect for grand living rooms, it invites relaxation and adds a touch of opulence to any decor.\n\nEach element of the Lolito sofa is crafted to perfection, from its sturdy internal structure to its soft, inviting fabric. The modular design allows for flexible configurations, adapting to different room sizes and preferences. A centerpiece that promises both comfort and style for years to come.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-detail-1.svg",
+        "/images/lolito-detail-2.svg",
+        "/images/lolito-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-desc-1.svg",
+        "/images/lolito-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "LS003",
+      "tags": ["Sofa", "Luxury", "Large", "Comfort"],
+      "colors": ["#C0C0C0", "#000000", "#8B4513"],
+      "sizes": ["XL"],
+      "materials": "Solid wood frame, High-density foam, Velvet fabric",
+      "dimensions": {
+        "length": "300 cm",
+        "width": "120 cm",
+        "height": "90 cm"
+      },
+      "weight": "120 kg",
+      "assembly": "Minimal assembly required"
+    },
+    {
+      "id": "SS028",
+      "name": "Respira",
+      "subtitle": "Outdoor bar table and stool",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A durable and stylish outdoor bar table with accompanying stools, designed for contemporary outdoor living.",
+      "longDescription": "The Respira outdoor bar set is engineered for durability and style, perfect for enhancing your patio or balcony. Crafted from weather-resistant materials, it offers a sturdy table and comfortable stools for outdoor dining or entertaining. Its modern design blends seamlessly with various outdoor aesthetics.\n\nBuilt to withstand the elements, this set requires minimal maintenance, ensuring long-lasting beauty and function. The stools are designed for comfort, making it a great spot for morning coffee or evening cocktails. Elevate your outdoor living with this chic and practical bar set.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-detail-1.svg",
+        "/images/respira-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-desc-1.svg",
+        "/images/respira-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "OT004",
+      "tags": ["Outdoor", "Table", "Stool", "New"],
+      "colors": ["#333333", "#D3D3D3"],
+      "sizes": ["Standard"],
+      "materials": "Aluminium frame, Woven synthetic rattan",
+      "dimensions": { "length": "80 cm", "width": "80 cm", "height": "100 cm" },
+      "weight": "25 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS029",
+      "name": "Slytherine Lounge",
+      "subtitle": "Comfortable lounge chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A spacious and inviting lounge chair, perfect for relaxation in your living room or study.",
+      "longDescription": "This Slytherine Lounge chair offers unparalleled comfort with its deep seating and soft upholstery. Its contemporary design fits perfectly in any modern living space, providing a cozy nook for reading or unwinding. The sturdy construction ensures lasting durability and support.\n\nFeaturing a high-resilience foam core wrapped in plush fabric, this chair maintains its shape and comfort over time. The solid wood base adds a touch of warmth and stability, making it both beautiful and functional. A perfect addition to your home for ultimate relaxation.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-lounge-detail-1.svg",
+        "/images/slytherine-lounge-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-lounge-desc-1.svg",
+        "/images/slytherine-lounge-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "LC005",
+      "tags": ["Chair", "Lounge", "Comfort", "Modern"],
+      "colors": ["#A9A9A9", "#F5DEB3", "#8B4513"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "90 cm", "width": "85 cm", "height": "85 cm" },
+      "weight": "20 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS030",
+      "name": "Leviosa Ottoman",
+      "subtitle": "Versatile ottoman stool",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A multi-functional ottoman that serves as extra seating, a footrest, or a stylish accent piece.",
+      "longDescription": "The Leviosa Ottoman is designed for versatility and comfort, making it a valuable addition to any room. Use it as a comfortable footrest, extra seating when guests arrive, or even a makeshift coffee table with a tray. Its compact size and elegant design ensure it fits seamlessly into various decor styles.\n\nConstructed with a sturdy internal frame and upholstered in durable fabric, this ottoman is built for everyday use. Its lightweight nature allows for easy repositioning, adapting to your changing needs. A practical and stylish piece that enhances both comfort and functionality in your living space.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-ottoman-detail-1.svg",
+        "/images/leviosa-ottoman-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-ottoman-desc-1.svg",
+        "/images/leviosa-ottoman-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "living",
+      "sku": "OT006",
+      "tags": ["Ottoman", "Stool", "Versatile", "Accent"],
+      "colors": ["#EFEFEF", "#A9A9A9"],
+      "sizes": ["Standard"],
+      "materials": "Wood frame, Fabric upholstery, Foam",
+      "dimensions": { "length": "60 cm", "width": "60 cm", "height": "40 cm" },
+      "weight": "10 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS031",
+      "name": "Lolito Bookshelf",
+      "subtitle": "Contemporary wooden bookshelf",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A spacious and modern wooden bookshelf, perfect for organizing your books and decorative items.",
+      "longDescription": "The Lolito Bookshelf combines ample storage with sleek, contemporary design. Crafted from high-quality wood, it offers multiple shelves to display your book collection, decor, or personal treasures. Its minimalist aesthetic allows it to blend seamlessly into various room styles, from modern to traditional.\n\nDesigned for stability and durability, this bookshelf is easy to assemble and maintain. The open-back design allows for easy cable management if used for electronics, and its robust construction supports a substantial weight capacity. A functional and elegant piece for any home or office.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-bookshelf-detail-1.svg",
+        "/images/lolito-bookshelf-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-bookshelf-desc-1.svg",
+        "/images/lolito-bookshelf-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "BS007",
+      "tags": ["Bookshelf", "Storage", "Wood", "Modern"],
+      "colors": ["#8B4513", "#D2B48C"],
+      "sizes": ["Large", "Medium"],
+      "materials": "Solid wood, Veneer",
+      "dimensions": {
+        "length": "120 cm",
+        "width": "30 cm",
+        "height": "180 cm"
+      },
+      "weight": "45 kg",
+      "assembly": "Self-assembly required"
+    },
+    {
+      "id": "SS032",
+      "name": "Respira Console Table",
+      "subtitle": "Minimalist nightstand",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A minimalist and elegant console table, perfect for entryways or as a stylish accent piece.",
+      "longDescription": "The Respira Console Table is a sleek, minimalist design that adds functional style to any space. Its slim profile makes it ideal for hallways, entryways, or behind a sofa, offering a convenient surface for essentials without occupying much space. The clean lines and neutral tones ensure it complements diverse interiors.\n\nConstructed with a sturdy metal frame and a smooth tabletop, this console table is built for stability and longevity. Its simple assembly makes it easy to set up, providing instant elegance and utility. A perfect piece for organizing your essentials and enhancing your home's aesthetic.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-console-detail-1.svg",
+        "/images/respira-console-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-console-desc-1.svg",
+        "/images/respira-console-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "CT008",
+      "tags": ["Console", "Table", "Minimalist", "Accent", "New"],
+      "colors": ["#D3D3D3", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal frame, Engineered wood top",
+      "dimensions": { "length": "100 cm", "width": "30 cm", "height": "75 cm" },
+      "weight": "15 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS033",
+      "name": "Slytherine Dining Chair",
+      "subtitle": "Ergonomic dining chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "An ergonomically designed dining chair that offers superior comfort and style for your dining area.",
+      "longDescription": "The Slytherine Dining Chair is crafted for long-lasting comfort and sophisticated style, making every meal a more enjoyable experience. Its ergonomic backrest provides excellent support, while the cushioned seat ensures plush seating. The chair's design is versatile, fitting well with various dining table styles.\n\nBuilt with a durable frame and upholstered in a stain-resistant fabric, this dining chair is designed for everyday family life. Its clean lines and understated elegance make it a perfect addition to modern and classic dining spaces. Easy to clean and maintain, ensuring beauty and functionality for years.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-dining-detail-1.svg",
+        "/images/slytherine-dining-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-dining-desc-1.svg",
+        "/images/slytherine-dining-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "dining",
+      "sku": "DC009",
+      "tags": ["Chair", "Dining", "Ergonomic"],
+      "colors": ["#A9A9A9", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "50 cm", "width": "55 cm", "height": "85 cm" },
+      "weight": "9 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS034",
+      "name": "Leviosa Bedside Table",
+      "subtitle": "Compact bedside table",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A compact and stylish bedside table, perfect for small spaces, offering convenience and modern design.",
+      "longDescription": "The Leviosa Bedside Table is a compact yet functional piece, ideal for keeping essentials close at hand in your bedroom. Its sleek design and small footprint make it perfect for smaller rooms, while its sturdy construction ensures durability. A convenient drawer provides discreet storage for personal items.\n\nCrafted from high-quality engineered wood with a smooth finish, this table is easy to clean and maintain. The minimalist aesthetic allows it to blend seamlessly with various bedroom decors, from contemporary to classic. A practical and elegant addition that enhances your bedside convenience.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-bedside-detail-1.svg",
+        "/images/leviosa-bedside-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-bedside-desc-1.svg",
+        "/images/leviosa-bedside-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "bedroom",
+      "sku": "BT010",
+      "tags": ["Table", "Bedside", "Compact", "Bedroom"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Engineered wood, Metal legs",
+      "dimensions": { "length": "40 cm", "width": "30 cm", "height": "50 cm" },
+      "weight": "5 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS035",
+      "name": "Lolito Coffee Table",
+      "subtitle": "Contemporary coffee table",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A large and stylish coffee table, designed to be the centerpiece of your living room, offering ample surface area.",
+      "longDescription": "The Lolito Coffee Table is a bold statement piece for any modern living room, combining expansive surface area with sophisticated design. Crafted from premium materials, its sturdy construction and sleek finish make it both functional and visually striking. Perfect for entertaining or daily use, it anchors your seating area with elegance.\n\nFeaturing a durable top ideal for beverages, books, and decor, this coffee table is designed for lasting beauty. Its low profile and strong build make it a practical yet luxurious addition, inviting social gatherings and comfortable living. Elevate your living space with this contemporary masterpiece.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-coffee-detail-1.svg",
+        "/images/lolito-coffee-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-coffee-desc-1.svg",
+        "/images/lolito-coffee-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "living",
+      "sku": "CT011",
+      "tags": ["Table", "Coffee", "Living Room", "Modern"],
+      "colors": ["#000000", "#D2B48C"],
+      "sizes": ["Large"],
+      "materials": "Tempered glass, Stainless steel frame",
+      "dimensions": { "length": "120 cm", "width": "70 cm", "height": "40 cm" },
+      "weight": "30 kg",
+      "assembly": "Moderate assembly required"
+    },
+    {
+      "id": "SS036",
+      "name": "Respira Floor Lamp",
+      "subtitle": "Elegant floor lamp",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegant floor lamp with a minimalist design, providing ambient lighting and a touch of modern sophistication.",
+      "longDescription": "The Respira Floor Lamp offers refined illumination with its slender profile and elegant design. Perfect for living rooms, studies, or bedrooms, it casts a warm, inviting glow that enhances the ambiance of any space. Its minimalist aesthetic ensures it complements a wide range of interior styles without overcrowding.\n\nConstructed with a sturdy metal base and a durable fabric shade, this lamp is built for stability and long-term use. The simple foot-switch operation adds convenience, while its sleek lines provide a contemporary touch. A functional and beautiful addition that brightens your home with understated elegance.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-lamp-detail-1.svg",
+        "/images/respira-lamp-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-lamp-desc-1.svg",
+        "/images/respira-lamp-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "bedroom",
+      "sku": "FL012",
+      "tags": ["Lamp", "Lighting", "Minimalist", "Bedroom", "New"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal, Fabric shade",
+      "dimensions": { "length": "30 cm", "width": "30 cm", "height": "160 cm" },
+      "weight": "6 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS037",
+      "name": "Slytherine",
+      "subtitle": "Stylish cafe chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A stylish and comfortable cafe chair with a minimalist design, perfect for modern spaces.",
+      "longDescription": "The Slytherine chair embodies minimalist elegance, featuring a sleek, durable frame and comfortable seating. Designed for cafe and contemporary dining settings, it offers ergonomic support and a lightweight build for easy rearrangement. Its clean lines complement any modern decor, making it a versatile addition to your space.\n\nCrafted from high-quality materials, this chair is built to withstand daily use while maintaining its aesthetic appeal. The subtle curves provide surprising comfort, making it suitable for long conversations or quick meals. A perfect blend of style and practicality for your home or business.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-detail-1.svg",
+        "/images/slytherine-detail-2.svg",
+        "/images/slytherine-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-desc-1.svg",
+        "/images/slytherine-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "SC001",
+      "tags": ["Chair", "Cafe", "Modern", "Stylish"],
+      "colors": ["#816DFA", "#000000", "#FFFFFF"],
+      "sizes": ["Standard"],
+      "materials": "Powder-coated steel frame, Faux leather upholstery",
+      "dimensions": { "length": "50 cm", "width": "50 cm", "height": "80 cm" },
+      "weight": "8 kg",
+      "assembly": "Minor assembly required"
+    },
+    {
+      "id": "SS038",
+      "name": "Leviosa",
+      "subtitle": "Stylish cafe chair",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegantly designed chair that combines comfort with a unique aesthetic, perfect for any modern cafe.",
+      "longDescription": "The Leviosa chair is a testament to modern design, offering both visual appeal and exceptional comfort. Its unique shape provides a supportive backrest, while the sturdy base ensures stability. Ideal for cafe environments or contemporary dining rooms, this chair is a statement piece that doesn't compromise on functionality.\n\nCrafted with attention to detail, the smooth finish and durable materials ensure longevity. The chair's lightweight nature allows for easy rearrangement, adapting to various layouts and needs. A blend of innovation and comfort for discerning tastes.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-detail-1.svg",
+        "/images/leviosa-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-desc-1.svg",
+        "/images/leviosa-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "dining",
+      "sku": "LC002",
+      "tags": ["Chair", "Cafe", "Dining", "Modern"],
+      "colors": ["#F9F1E7", "#B88E2F", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood legs, Molded plastic seat",
+      "dimensions": { "length": "55 cm", "width": "52 cm", "height": "85 cm" },
+      "weight": "7 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS039",
+      "name": "Lolito",
+      "subtitle": "Luxury big sofa",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A luxurious and spacious sofa, designed for ultimate comfort and elegance in large living spaces.",
+      "longDescription": "The Lolito sofa redefines luxury and comfort, featuring generous seating and plush cushions. Its robust frame and high-quality upholstery ensure durability and a sophisticated look. Perfect for grand living rooms, it invites relaxation and adds a touch of opulence to any decor.\n\nEach element of the Lolito sofa is crafted to perfection, from its sturdy internal structure to its soft, inviting fabric. The modular design allows for flexible configurations, adapting to different room sizes and preferences. A centerpiece that promises both comfort and style for years to come.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-detail-1.svg",
+        "/images/lolito-detail-2.svg",
+        "/images/lolito-detail-3.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-desc-1.svg",
+        "/images/lolito-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "LS003",
+      "tags": ["Sofa", "Luxury", "Large", "Comfort"],
+      "colors": ["#C0C0C0", "#000000", "#8B4513"],
+      "sizes": ["XL"],
+      "materials": "Solid wood frame, High-density foam, Velvet fabric",
+      "dimensions": {
+        "length": "300 cm",
+        "width": "120 cm",
+        "height": "90 cm"
+      },
+      "weight": "120 kg",
+      "assembly": "Minimal assembly required"
+    },
+    {
+      "id": "SS040",
+      "name": "Respira",
+      "subtitle": "Outdoor bar table and stool",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A durable and stylish outdoor bar table with accompanying stools, designed for contemporary outdoor living.",
+      "longDescription": "The Respira outdoor bar set is engineered for durability and style, perfect for enhancing your patio or balcony. Crafted from weather-resistant materials, it offers a sturdy table and comfortable stools for outdoor dining or entertaining. Its modern design blends seamlessly with various outdoor aesthetics.\n\nBuilt to withstand the elements, this set requires minimal maintenance, ensuring long-lasting beauty and function. The stools are designed for comfort, making it a great spot for morning coffee or evening cocktails. Elevate your outdoor living with this chic and practical bar set.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-detail-1.svg",
+        "/images/respira-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-desc-1.svg",
+        "/images/respira-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "OT004",
+      "tags": ["Outdoor", "Table", "Stool", "New"],
+      "colors": ["#333333", "#D3D3D3"],
+      "sizes": ["Standard"],
+      "materials": "Aluminium frame, Woven synthetic rattan",
+      "dimensions": { "length": "80 cm", "width": "80 cm", "height": "100 cm" },
+      "weight": "25 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS041",
+      "name": "Slytherine Lounge",
+      "subtitle": "Comfortable lounge chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "A spacious and inviting lounge chair, perfect for relaxation in your living room or study.",
+      "longDescription": "This Slytherine Lounge chair offers unparalleled comfort with its deep seating and soft upholstery. Its contemporary design fits perfectly in any modern living space, providing a cozy nook for reading or unwinding. The sturdy construction ensures lasting durability and support.\n\nFeaturing a high-resilience foam core wrapped in plush fabric, this chair maintains its shape and comfort over time. The solid wood base adds a touch of warmth and stability, making it both beautiful and functional. A perfect addition to your home for ultimate relaxation.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-lounge-detail-1.svg",
+        "/images/slytherine-lounge-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-lounge-desc-1.svg",
+        "/images/slytherine-lounge-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "living",
+      "sku": "LC005",
+      "tags": ["Chair", "Lounge", "Comfort", "Modern"],
+      "colors": ["#A9A9A9", "#F5DEB3", "#8B4513"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "90 cm", "width": "85 cm", "height": "85 cm" },
+      "weight": "20 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS042",
+      "name": "Leviosa Ottoman",
+      "subtitle": "Versatile ottoman stool",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A multi-functional ottoman that serves as extra seating, a footrest, or a stylish accent piece.",
+      "longDescription": "The Leviosa Ottoman is designed for versatility and comfort, making it a valuable addition to any room. Use it as a comfortable footrest, extra seating when guests arrive, or even a makeshift coffee table with a tray. Its compact size and elegant design ensure it fits seamlessly into various decor styles.\n\nConstructed with a sturdy internal frame and upholstered in durable fabric, this ottoman is built for everyday use. Its lightweight nature allows for easy repositioning, adapting to your changing needs. A practical and stylish piece that enhances both comfort and functionality in your living space.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-ottoman-detail-1.svg",
+        "/images/leviosa-ottoman-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-ottoman-desc-1.svg",
+        "/images/leviosa-ottoman-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "living",
+      "sku": "OT006",
+      "tags": ["Ottoman", "Stool", "Versatile", "Accent"],
+      "colors": ["#EFEFEF", "#A9A9A9"],
+      "sizes": ["Standard"],
+      "materials": "Wood frame, Fabric upholstery, Foam",
+      "dimensions": { "length": "60 cm", "width": "60 cm", "height": "40 cm" },
+      "weight": "10 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS043",
+      "name": "Lolito Bookshelf",
+      "subtitle": "Contemporary wooden bookshelf",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A spacious and modern wooden bookshelf, perfect for organizing your books and decorative items.",
+      "longDescription": "The Lolito Bookshelf combines ample storage with sleek, contemporary design. Crafted from high-quality wood, it offers multiple shelves to display your book collection, decor, or personal treasures. Its minimalist aesthetic allows it to blend seamlessly into various room styles, from modern to traditional.\n\nDesigned for stability and durability, this bookshelf is easy to assemble and maintain. The open-back design allows for easy cable management if used for electronics, and its robust construction supports a substantial weight capacity. A functional and elegant piece for any home or office.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-bookshelf-detail-1.svg",
+        "/images/lolito-bookshelf-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-bookshelf-desc-1.svg",
+        "/images/lolito-bookshelf-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "bedroom",
+      "sku": "BS007",
+      "tags": ["Bookshelf", "Storage", "Wood", "Modern"],
+      "colors": ["#8B4513", "#D2B48C"],
+      "sizes": ["Large", "Medium"],
+      "materials": "Solid wood, Veneer",
+      "dimensions": {
+        "length": "120 cm",
+        "width": "30 cm",
+        "height": "180 cm"
+      },
+      "weight": "45 kg",
+      "assembly": "Self-assembly required"
+    },
+    {
+      "id": "SS044",
+      "name": "Respira Console Table",
+      "subtitle": "Minimalist nightstand",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A minimalist and elegant console table, perfect for entryways or as a stylish accent piece.",
+      "longDescription": "The Respira Console Table is a sleek, minimalist design that adds functional style to any space. Its slim profile makes it ideal for hallways, entryways, or behind a sofa, offering a convenient surface for essentials without occupying much space. The clean lines and neutral tones ensure it complements diverse interiors.\n\nConstructed with a sturdy metal frame and a smooth tabletop, this console table is built for stability and longevity. Its simple assembly makes it easy to set up, providing instant elegance and utility. A perfect piece for organizing your essentials and enhancing your home's aesthetic.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-console-detail-1.svg",
+        "/images/respira-console-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-console-desc-1.svg",
+        "/images/respira-console-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "living",
+      "sku": "CT008",
+      "tags": ["Console", "Table", "Minimalist", "Accent", "New"],
+      "colors": ["#D3D3D3", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal frame, Engineered wood top",
+      "dimensions": { "length": "100 cm", "width": "30 cm", "height": "75 cm" },
+      "weight": "15 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS045",
+      "name": "Slytherine Dining Chair",
+      "subtitle": "Ergonomic dining chair",
+      "rate": 4,
+      "price": 2500000,
+      "originalPrice": 3500000,
+      "discount": 30,
+      "description": "An ergonomically designed dining chair that offers superior comfort and style for your dining area.",
+      "longDescription": "The Slytherine Dining Chair is crafted for long-lasting comfort and sophisticated style, making every meal a more enjoyable experience. Its ergonomic backrest provides excellent support, while the cushioned seat ensures plush seating. The chair's design is versatile, fitting well with various dining table styles.\n\nBuilt with a durable frame and upholstered in a stain-resistant fabric, this dining chair is designed for everyday family life. Its clean lines and understated elegance make it a perfect addition to modern and classic dining spaces. Easy to clean and maintain, ensuring beauty and functionality for years.",
+      "images": [
+        "/images/shop-image-1.svg",
+        "/images/slytherine-dining-detail-1.svg",
+        "/images/slytherine-dining-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/slytherine-dining-desc-1.svg",
+        "/images/slytherine-dining-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-1.svg",
+      "category": "dining",
+      "sku": "DC009",
+      "tags": ["Chair", "Dining", "Ergonomic"],
+      "colors": ["#A9A9A9", "#E0B384"],
+      "sizes": ["Standard"],
+      "materials": "Solid wood, Fabric, Foam",
+      "dimensions": { "length": "50 cm", "width": "55 cm", "height": "85 cm" },
+      "weight": "9 kg",
+      "assembly": "No assembly required"
+    },
+    {
+      "id": "SS046",
+      "name": "Leviosa Bedside Table",
+      "subtitle": "Compact bedside table",
+      "rate": 5,
+      "price": 2500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "A compact and stylish bedside table, perfect for small spaces, offering convenience and modern design.",
+      "longDescription": "The Leviosa Bedside Table is a compact yet functional piece, ideal for keeping essentials close at hand in your bedroom. Its sleek design and small footprint make it perfect for smaller rooms, while its sturdy construction ensures durability. A convenient drawer provides discreet storage for personal items.\n\nCrafted from high-quality engineered wood with a smooth finish, this table is easy to clean and maintain. The minimalist aesthetic allows it to blend seamlessly with various bedroom decors, from contemporary to classic. A practical and elegant addition that enhances your bedside convenience.",
+      "images": [
+        "/images/shop-image-2.svg",
+        "/images/leviosa-bedside-detail-1.svg",
+        "/images/leviosa-bedside-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/leviosa-bedside-desc-1.svg",
+        "/images/leviosa-bedside-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-2.svg",
+      "category": "bedroom",
+      "sku": "BT010",
+      "tags": ["Table", "Bedside", "Compact", "Bedroom"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Engineered wood, Metal legs",
+      "dimensions": { "length": "40 cm", "width": "30 cm", "height": "50 cm" },
+      "weight": "5 kg",
+      "assembly": "Simple assembly required"
+    },
+    {
+      "id": "SS047",
+      "name": "Lolito Coffee Table",
+      "subtitle": "Contemporary coffee table",
+      "rate": 4,
+      "price": 7000000,
+      "originalPrice": 14000000,
+      "discount": 50,
+      "description": "A large and stylish coffee table, designed to be the centerpiece of your living room, offering ample surface area.",
+      "longDescription": "The Lolito Coffee Table is a bold statement piece for any modern living room, combining expansive surface area with sophisticated design. Crafted from premium materials, its sturdy construction and sleek finish make it both functional and visually striking. Perfect for entertaining or daily use, it anchors your seating area with elegance.\n\nFeaturing a durable top ideal for beverages, books, and decor, this coffee table is designed for lasting beauty. Its low profile and strong build make it a practical yet luxurious addition, inviting social gatherings and comfortable living. Elevate your living space with this contemporary masterpiece.",
+      "images": [
+        "/images/shop-image-3.svg",
+        "/images/lolito-coffee-detail-1.svg",
+        "/images/lolito-coffee-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/lolito-coffee-desc-1.svg",
+        "/images/lolito-coffee-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-3.svg",
+      "category": "living",
+      "sku": "CT011",
+      "tags": ["Table", "Coffee", "Living Room", "Modern"],
+      "colors": ["#000000", "#D2B48C"],
+      "sizes": ["Large"],
+      "materials": "Tempered glass, Stainless steel frame",
+      "dimensions": { "length": "120 cm", "width": "70 cm", "height": "40 cm" },
+      "weight": "30 kg",
+      "assembly": "Moderate assembly required"
+    },
+    {
+      "id": "SS048",
+      "name": "Respira Floor Lamp",
+      "subtitle": "Elegant floor lamp",
+      "rate": 3,
+      "price": 500000,
+      "originalPrice": null,
+      "discount": null,
+      "description": "An elegant floor lamp with a minimalist design, providing ambient lighting and a touch of modern sophistication.",
+      "longDescription": "The Respira Floor Lamp offers refined illumination with its slender profile and elegant design. Perfect for living rooms, studies, or bedrooms, it casts a warm, inviting glow that enhances the ambiance of any space. Its minimalist aesthetic ensures it complements a wide range of interior styles without overcrowding.\n\nConstructed with a sturdy metal base and a durable fabric shade, this lamp is built for stability and long-term use. The simple foot-switch operation adds convenience, while its sleek lines provide a contemporary touch. A functional and beautiful addition that brightens your home with understated elegance.",
+      "images": [
+        "/images/shop-image-4.svg",
+        "/images/respira-lamp-detail-1.svg",
+        "/images/respira-lamp-detail-2.svg"
+      ],
+      "descriptionImages": [
+        "/images/respira-lamp-desc-1.svg",
+        "/images/respira-lamp-desc-2.svg"
+      ],
+      "thumbnail": "/images/shop-image-4.svg",
+      "category": "bedroom",
+      "sku": "FL012",
+      "tags": ["Lamp", "Lighting", "Minimalist", "Bedroom", "New"],
+      "colors": ["#FFFFFF", "#333333"],
+      "sizes": ["Standard"],
+      "materials": "Metal, Fabric shade",
+      "dimensions": { "length": "30 cm", "width": "30 cm", "height": "160 cm" },
+      "weight": "6 kg",
+      "assembly": "Simple assembly required"
     }
   ]
 }

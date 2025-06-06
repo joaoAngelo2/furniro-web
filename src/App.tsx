@@ -1,5 +1,4 @@
 // src/App.tsx
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; // Importe 'Link' se for usá-lo na rota inicial temporária
 
 // Importe os seus componentes Header e Footer

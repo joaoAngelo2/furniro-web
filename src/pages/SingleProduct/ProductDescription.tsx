@@ -12,9 +12,9 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({
   const paragraphs = description.split("\n\n");
 
   return (
-    <div className="text-gray-700 leading-relaxed mb-10">
+    <div className="text-prata leading-relaxed mb-10">
       {paragraphs.map((p, index) => (
-        <p key={index} className="mb-4">
+        <p key={index} className=" mb-4 max-w-[62rem] mx-auto">
           {p}
         </p>
       ))}
@@ -25,7 +25,7 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({
             key={index}
             src={image}
             alt={`Imagem da Descrição ${index + 1}`}
-            className="w-full md:w-1/2 object-cover rounded-lg"
+            className="w-full md:w-1/2 object-cover rounded-xl bg-primary "
           />
         ))}
       </div>
