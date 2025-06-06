@@ -11,6 +11,7 @@ export default {
         primary: "#F9F1E7",
         secundary: "#B88E2F",
         prata: "#9F9F9F",
+        cinza: "#D9D9D9"
       },
     },
   },

@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductAdditionalInfo from "./ProductAdditionalInfo";
 import ProductDescription from "./ProductDescription";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 interface Product {
   id: string;
@@ -121,7 +122,7 @@ const SingleProductPage: React.FC = () => {
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className="text-sm text-prata mb-8 flex items-center bg-primary w-full h-24 font-poppins ">
         <div className="flex items-center container mx-auto space-x-4 justify-center md:justify-start">
           <Link to="/" className="hover:text-secundary">
@@ -193,7 +194,7 @@ const SingleProductPage: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <span className="ml-4 text-prata text-sm border-l-2 pl-4">
+              <span className="ml-4 text-prata text-sm border-l-2 pl-4 border-cinza">
                 5 Customer Review
               </span>
             </div>
@@ -269,7 +270,7 @@ const SingleProductPage: React.FC = () => {
               </button>
             </div>
             {/* Detalhes Adicionais (SKU, Category, Tags) */}
-            <div className="border-t border-gray-200 pt-8 mt-8 text-prata text-base">
+            <div className="border-t border-cinza pt-8 mt-8 text-prata text-base">
               <p className="mb-3">
                 SKU : <span className="">{product.sku}</span>
               </p>
@@ -324,7 +325,7 @@ const SingleProductPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-full border-t border-gray-200 pt-10 mt-10">
+        <div className="w-full border-t border-cinza pt-10 mt-10">
           {" "}
           {/* Linha divisória e espaçamento superior */}
           <div className="container mx-auto px-4">
@@ -374,15 +375,13 @@ const SingleProductPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="border-t container mx-auto px-4">
+        <div className="border-t border-cinza container mx-auto px-4 border-b">
           <div className="px-4 mb-14">
-            <h2 className="flex justify-center font-medium text-black text-4xl mt-14">
+            <h2 className="flex justify-center font-medium text-black md:text-4xl mt-14 text-3xl">
               Related Products
             </h2>
 
-            <div className="">
-              
-            </div>
+            <div className=""></div>
 
             <div className="flex justify-center">
               <Link
@@ -402,6 +401,7 @@ const SingleProductPage: React.FC = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
