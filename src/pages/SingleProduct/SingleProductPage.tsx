@@ -7,16 +7,16 @@ import ProductDescription from "./ProductDescription";
 interface Product {
   id: string;
   name: string;
-  subtitle?: string; // Adicionado
-  rate?: number; // Adicionado
+  subtitle?: string;
+  rate?: number;
   price: number;
-  originalPrice?: number; // Adicionado
-  discount?: number; // Adicionado
+  originalPrice?: number;
+  discount?: number;
   description: string;
   longDescription?: string;
   images: string[];
   descriptionImages?: string[];
-  thumbnail?: string; // Adicionado
+  thumbnail?: string;
   category: string;
   sku: string;
   tags: string[];
@@ -322,7 +322,7 @@ const SingleProductPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-200 pt-10 mt-10">
+        <div className="w-full border-t border-gray-200 pt-10 mt-10">
           {" "}
           {/* Linha divisória e espaçamento superior */}
           <div className="container mx-auto px-4">
@@ -378,25 +378,8 @@ const SingleProductPage: React.FC = () => {
               Related Products
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-14">
-              {" "}
-              {/* Grid para os cards */}
-              {/* Aqui você vai mapear os `relatedProducts` e renderizar o `ProductCard` */}
-              {/* Exemplo:
-      {relatedProducts.map(product => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          type={product.type}
-          price={product.price}
-          oldPrice={product.oldPrice}
-          discount={product.discount}
-          images={product.images}
-          tags={product.tags}
-        />
-      ))}
-      */}
+            <div className="">
+              
             </div>
 
             <div className="flex justify-center">
