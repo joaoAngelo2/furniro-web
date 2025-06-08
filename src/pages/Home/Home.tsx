@@ -10,7 +10,7 @@ const Home = () => {
             <PromoBanner/>
         </section>
         <section>
-        <div className='md:h-[122rem] xl:h-[42rem] sm:h-[122rem] w-screen font-poppins'>
+        <div className='md:h-[47rem] xl:h-[42rem] h-[122rem] w-screen font-poppins'>
             <div className='w-screen text-center mb-8'>
                 <p className='text-3xl font-bold text-zinc-800 '>Browse The Range</p>
                 <p className="text-xl font-normal text-stone-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
