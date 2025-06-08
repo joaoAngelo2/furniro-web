@@ -15,7 +15,7 @@ const Home = () => {
                 <p className='text-3xl font-bold text-zinc-800 '>Browse The Range</p>
                 <p className="text-xl font-normal text-stone-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div className='flex flex-col max-w-screen-xl lg:flex-row w-screen  items-center mx-auto justify-between'>
+            <div className='flex flex-col max-w-screen-xl lg:flex-row w-screen gap-12 lg:w-4/5 lg:place-content-center items-center mx-auto justify-between'>
                 <CategoryCard imageClass='bg-dining-img' title="Dining" to="/shop/dining"/>
                 <CategoryCard imageClass='bg-living-img' title="Living" to="/shop/living"/>
                 <CategoryCard imageClass='bg-bedroom-img' title="Bedroom" to="/shop/bedroom"/>

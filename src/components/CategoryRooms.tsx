@@ -6,16 +6,19 @@ const rooms = [
     title: 'Bedroom',
     name: 'Inner Peace',
     image: 'bg-inner-peace',
+    to: '/shop/bedroom',
   },
   {
     title: 'Dining Room',
     name: 'Classic Comfort',
     image: 'bg-beatiful-room-2',
+    to: '/shop/dining',
   },
   {
     title: 'Living Room',
     name: 'Modern Elegance',
     image: "bg-[url('assets/70655e8b25a06a33769af9bf5fe8f8ed81ce75d8.png')]",
+    to: '/shop/living',
   },
 ];
 
@@ -32,13 +35,12 @@ const CategoryRooms = () => {
 
   return (
     <div className="font-poppins">
-      <div className="bg-amarelo-bloco w-full min-h-screen flex flex-col lg:flex-row justify-between px-4 lg:px-0 py-8 gap-6">
-        =
-        <div className="w-full lg:w-[30rem] flex flex-col justify-center px-2 md:px-6 lg:pl-20 text-center lg:text-start place-content-center">
-          <p className="font-bold text-[2rem] lg:text-[2.5rem] w-full max-w-md leading-tight">
+      <div className="bg-amarelo-bloco w-full flex flex-col lg:flex-row justify-between px-4 lg:px-0 py-8 gap-6">
+        <div className="w-full lg:w-2/4 flex flex-col justify-center px-2 md:px-6 lg:pl-20 text-center lg:text-start place-content-center">
+          <p className="font-bold text-[2rem] lg:text-[2.5rem] w-full max-w-md leading-tight mx-auto">
             50+ Beautiful rooms inspiration
           </p>
-          <p className="text-zinc-600 text-base font-medium leading-normal max-w-[368px] mt-4">
+          <p className="text-zinc-600 text-base font-medium mx-auto  leading-normal max-w-[368px] mt-4">
             Our designer already made a lot of beautiful prototipe of rooms that inspire you
           </p>
           <Link to="/shop">
@@ -49,23 +51,25 @@ const CategoryRooms = () => {
         </div>
 
         {/* Cards */}
-        <div className="w-full flex flex-col md:flex-row lg:flex-row justify-center items-center gap-4 lg:gap-0">
+        <div className="w-full flex flex-col md:flex-row lg:flex-row justify-betwen  items-start gap-4 ">
           
           {/* Card Principal */}
           <div className={`relative h-[36rem] w-full md:w-[45%] lg:w-96 bg-cover ${currentRoom.image}`}>
-            <div className="h-32 w-48 xl:w-52 mb-6 ml-6 absolute hidden md:block place-content-center bg-white/75 backdrop-blur-sm bottom-1 text-center">
+            <div className="h-32 w-48 xl:w-52 mb-6 ml-6 absolute  md:block place-content-center bg-white/75 backdrop-blur-sm bottom-1 text-center">
               <p className="text-zinc-600 text-base font-medium">{currentRoom.title}</p>
               <p className="text-neutral-700 text-3xl font-semibold">{currentRoom.name}</p>
             </div>
-            <button className="bg-amarelo-botoes absolute right-0 bottom-0 mr-4 mb-1 -translate-y-1/2 place-items-center text-white w-12 h-12 grid">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EFEFEF">
-                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
-              </svg>
-            </button>
+            <Link to={currentRoom.to}>
+              <button className="bg-amarelo-botoes absolute right-0 bottom-0 mr-4 mb-1 -translate-y-1/2 place-items-center text-white w-12 h-12 grid">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EFEFEF">
+                  <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+              </button>
+            </Link>
           </div>
 
           {/* Card Secundário */}
-          <div className="flex flex-col justify-between h-[36rem] w-full md:w-[45%] lg:w-[20rem]">
+          <div className="flex flex-col justify-start h-[36rem] lg:w-2/4 w-full md:w-[45%]">
             <div className={`w-full h-[30rem] bg-cover relative ${postRoom.image}`}>
               <button className="h-12 w-12 rounded-full bg-white right-0 ml-2 top-1/2 absolute -translate-y-1/2 grid place-items-center" onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#B88E2F">
@@ -91,7 +95,6 @@ const CategoryRooms = () => {
             </div>
           </div>
 
-          {/* Card Final (estreito) — só no desktop */}
           <div className={`hidden lg:block ${lastRoom.image} bg-cover w-12 h-[30rem]`} />
         </div>
       </div>
