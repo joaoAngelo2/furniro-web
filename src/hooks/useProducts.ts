@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 interface Product {
   id: string;
   name: string;
-  subtitle: string;
+  subtitle?: string;
   price: number;
   originalPrice?: number;
-  thumbnail: string;
+  thumbnail?: string;
   category?: string;
-  hint: ProductHint;
+  hint?: ProductHint;
 }
 
 export type ProductHint = "New" | number | null;

@@ -5,6 +5,8 @@ import ProductAdditionalInfo from "../../components/ProductAdditionalInfo";
 import ProductDescription from "../../components/ProductDescription";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ProductCard from "../../components/ProductCard";
+import type { ProductHint } from "../../hooks/useProducts";
 
 interface Product {
   id: string;
@@ -21,7 +23,7 @@ interface Product {
   thumbnail?: string;
   category: string;
   sku: string;
-  tags: string[];
+  tags?: string[];
   colors?: string[];
   sizes?: string[];
   materials?: string;
@@ -32,6 +34,7 @@ interface Product {
   };
   weight?: string;
   assembly?: string;
+  hint?: ProductHint;
 }
 const SingleProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -46,6 +49,7 @@ const SingleProductPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"description" | "additional-info">(
     "description"
   );
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
   // --- Função para exibir o Toast ---
   const triggerToast = (message: string) => {
@@ -67,7 +71,7 @@ const SingleProductPage: React.FC = () => {
       setError(null);
       try {
         const response = await axios.get<Product>(
-          `http://localhost:3000/products/${id}`
+          `http://localhost:3001/products/${id}`
         );
         setProduct(response.data);
         if (response.data.images && response.data.images.length > 0) {
@@ -83,6 +87,23 @@ const SingleProductPage: React.FC = () => {
 
     fetchProduct();
   }, [id]);
+
+  useEffect(() => {
+    if (!product) return;
+
+    const fetchRelatedProducts = async () => {
+      try {
+        const response = await axios.get<Product[]>(
+          `http://localhost:3001/products?category=${product.category}&id_ne=${product.id}`
+        );
+        setRelatedProducts(response.data);
+      } catch (err) {
+        console.error("Erro ao buscar produtos relacionados:", err);
+      }
+    };
+
+    fetchRelatedProducts();
+  }, [product]);
 
   // --- Funções para o seletor de quantidade ---
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
@@ -278,7 +299,14 @@ const SingleProductPage: React.FC = () => {
                 Category : <span className="">{product.category}</span>
               </p>
               <p>
-                Tags : <span className="">{product.tags.join(", ")}</span>
+                Tags :{" "}
+                <span className="">
+                  {/* CORREÇÃO AQUI: Verifique se tags existe antes de join() */}
+                  {product.tags && product.tags.length > 0
+                    ? product.tags.join(", ")
+                    : "N/A"}{" "}
+                  {/* Ou "" para não exibir nada */}
+                </span>
               </p>
             </div>
             {/* Ícones de Compartilhamento (se for o caso) */}
@@ -329,8 +357,6 @@ const SingleProductPage: React.FC = () => {
           {" "}
           {/* Linha divisória e espaçamento superior */}
           <div className="container mx-auto px-4">
-            {" "}
-            {/* Container para centralizar o conteúdo das abas */}
             {/* Abas de Navegação (botões) */}
             <div className="flex justify-center gap-16 mb-8 text-xl ">
               <button
@@ -367,22 +393,44 @@ const SingleProductPage: React.FC = () => {
                 />
               )}
               {activeTab === "additional-info" && product && (
-                <ProductAdditionalInfo
-                  product={product} // Passa o objeto produto completo para a aba de informações adicionais
-                />
+                <ProductAdditionalInfo product={product} />
               )}
-              {/* Adicione o componente de Reviews aqui se activeTab for 'reviews' */}
             </div>
           </div>
         </div>
         <div className="border-t border-cinza container mx-auto px-4 border-b">
           <div className="px-4 mb-14">
-            <h2 className="flex justify-center font-medium text-black md:text-4xl mt-14 text-3xl">
+            <h2 className="flex justify-center font-medium text-black md:text-4xl mt-14 text-3xl mb-8">
               Related Products
             </h2>
-
-            <div className=""></div>
-
+            <div className="overflow-x-auto custom-scrollbar">
+              <div className="w-max min-w-full grid grid-cols-4 gap-8 mb-14">
+                {relatedProducts[0] && (
+                  <ProductCard
+                    key={relatedProducts[0].id}
+                    product={relatedProducts[0]}
+                  />
+                )}
+                {relatedProducts[1] && (
+                  <ProductCard
+                    key={relatedProducts[1].id}
+                    product={relatedProducts[1]}
+                  />
+                )}
+                {relatedProducts[2] && (
+                  <ProductCard
+                    key={relatedProducts[2].id}
+                    product={relatedProducts[2]}
+                  />
+                )}
+                {relatedProducts[3] && (
+                  <ProductCard
+                    key={relatedProducts[3].id}
+                    product={relatedProducts[3]}
+                  />
+                )}
+              </div>
+            </div>
             <div className="flex justify-center">
               <Link
                 to="/shop"

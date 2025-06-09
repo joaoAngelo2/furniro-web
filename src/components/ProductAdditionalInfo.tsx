@@ -1,17 +1,35 @@
 // src/pages/SingleProduct/ProductAdditionalInfo.tsx
 import React from "react";
+import type { ProductHint } from "../hooks/useProducts";
 
 // Reutilize ou defina uma interface para os dados específicos desta aba
-interface Product {
-  // Pode ser uma interface menor ou a mesma do SingleProductPage
+interface Product { // Certifique-se que esta interface é flexível o suficiente
   id: string;
+  name: string;
+  subtitle?: string; // OPCIONAL AQUI
+  rate?: number;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  description: string;
+  longDescription?: string;
+  images: string[];
+  descriptionImages?: string[];
+  thumbnail?: string; // OPCIONAL AQUI
   category: string;
   sku: string;
-  tags: string[];
+  tags?: string[]; // OPCIONAL AQUI
+  colors?: string[];
+  sizes?: string[];
   materials?: string;
-  dimensions?: { length: string; width: string; height: string };
+  dimensions?: {
+    length: string;
+    width: string;
+    height: string;
+  };
   weight?: string;
   assembly?: string;
+  hint?: ProductHint; // ou ProductHint, mas como não é usado, any ou undefined está ok para essa aba.
 }
 
 interface ProductAdditionalInfoProps {

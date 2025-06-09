@@ -11,11 +11,11 @@ import LikeIcon from "../assets/icons/heart.svg";
 interface ProductCardProps {
   id: string;
   name: string;
-  subtitle: string;
+  subtitle?: string;
   price: number;
   originalPrice?: number;
-  thumbnail: string;
-  hint: ProductHint;
+  thumbnail?: string;
+  hint?: ProductHint;
 }
 
 const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
@@ -111,7 +111,7 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
 };
 
 interface ProductHintProps {
-  hint: ProductHint;
+  hint: ProductHint | undefined;
 }
 
 function ProductHintBall({ hint }: ProductHintProps) {
