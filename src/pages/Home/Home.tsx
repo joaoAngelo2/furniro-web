@@ -4,9 +4,11 @@ import CategoryRooms from '../../components/CategoryRooms'
 import { Link } from 'react-router-dom'
 import Mosaico from '../../components/Mosaico'
 
+
 const Home = () => {
   return (
     <div>
+        {/*<Header></Header>*/}
         <section>
             <PromoBanner/>
         </section>
@@ -26,20 +28,10 @@ const Home = () => {
         </div>
         </section>
         <section>
-            {/*colocar os componentes reutilizaveis */}
            <div className="w-screen text-center">
-  <p className="text-3xl font-bold text-zinc-800 mb-8">Our Products</p>
-  <div className="w-4/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mx-auto">
-    <div className="bg-red-600 h-64"></div>
-    <div className="bg-red-600 h-64"></div>
-    <div className="bg-red-600 h-64"></div>
-    <div className="bg-red-600 h-64"></div>
-    <div className="bg-red-600 h-64 hidden md:block"></div>
-    <div className="bg-red-600 h-64 hidden md:block"></div>
-    <div className="bg-red-600 h-64 hidden md:block"></div>
-    <div className="bg-red-600 h-64 hidden md:block"></div>
-  </div>
-</div>
+                <p className="text-3xl font-bold text-zinc-800 mb-8">Our Products</p>
+                    {/*<ProductGrid/> descomentar depois*/}
+                </div>
             <Link to={'/shop'}>
                 <div className='w-screen items-center flex'>
                     <button className='mx-auto w-60 h-12 border-amarelo-botoes border-2 text-yellow-600 text-base font-semibold mb-8'>Show more</button>
@@ -59,6 +51,8 @@ const Home = () => {
 
         <Mosaico/>
     </section>
+
+    {/*<Footer><Footer/>*/}
 
     </div>
   )
