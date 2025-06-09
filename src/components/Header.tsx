@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white">
       <nav className="container mx-auto flex justify-between items-center py-7 px-4 md:px-0">
         <button
           className="md:hidden text-gray-800 focus:outline-none order-first"
