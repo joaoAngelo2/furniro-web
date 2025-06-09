@@ -63,7 +63,7 @@ const CategoryRooms = () => {
           
           {/* Card Principal */}
           <div
-            className={`relative h-[36rem] w-full lg:w-1/3 bg-cover ${currentRoom.image}`}
+            className={`relative h-[36rem] w-full lg:w-2/5 bg-cover ${currentRoom.image}`}
             aria-label={`Room category: ${currentRoom.title}`}
           >
             <div className="h-32 w-48 xl:w-52 mb-6 ml-6 absolute md:block place-content-center bg-white/75 backdrop-blur-sm bottom-1 text-center">
