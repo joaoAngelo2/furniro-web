@@ -3,12 +3,14 @@ import PromoBanner from '../../components/PromoBanner'
 import CategoryRooms from '../../components/CategoryRooms'
 import { Link } from 'react-router-dom'
 import Mosaico from '../../components/Mosaico'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 
 const Home = () => {
   return (
     <div>
-        {/*<Header></Header>*/}
+        <Header/>
         <section>
             <PromoBanner/>
         </section>
@@ -52,7 +54,7 @@ const Home = () => {
         <Mosaico/>
     </section>
 
-    {/*<Footer><Footer/>*/}
+    <Footer/>
 
     </div>
   )

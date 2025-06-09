@@ -1,7 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .body .html .root {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Exemplo de animação para o Toast (adicione em index.css ou um arquivo CSS global) */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInOut 3s ease-in-out forwards;
 }

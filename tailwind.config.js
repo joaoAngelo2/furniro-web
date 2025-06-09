@@ -32,6 +32,10 @@ export default {
       colors: {
         "amarelo-bloco": "#FFF3E3",
         "amarelo-botoes": "#B88E2F",
+        primary: "#F9F1E7",
+        secundary: "#B88E2F",
+        prata: "#9F9F9F",
+        cinza: "#D9D9D9",
       },
       spacing: {
         62.99563: "62.99563rem",
