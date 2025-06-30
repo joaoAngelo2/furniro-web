@@ -1,7 +1,15 @@
-import React from "react";
-import shopBackground from "../assets/shop-background.svg";
 
-const ShopBanner: React.FC = () => {
+import shopBackground from "../assets/shop-background.svg";
+import { Link } from "react-router-dom";
+
+
+type ExibeProps = {
+  name: string;
+  exibe: boolean;
+}
+
+
+const ShopBanner = ({name, exibe}: ExibeProps) => {
   return (
     <div
       className="w-full h-[19.75rem] flex-shrink-0 relative bg-cover bg-center"
@@ -11,14 +19,18 @@ const ShopBanner: React.FC = () => {
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center">
         {/* Título "Shop" */}
+        
+        <img src="/src/assets/logo.png" alt="logo" className={`${exibe ? 'block': 'hidden'} w-16 h-16`} />
         <h1 className="text-black font-poppins text-[3rem] font-medium leading-none">
-          Shop
+          {name}
         </h1>
 
         <div className="flex items-center gap-2 mt-4">
-          <span className="text-black font-poppins text-[1rem] font-medium">
-            Home
-          </span>
+          <Link to="/">
+            <span className="text-black font-poppins text-[1rem] font-medium">
+              Home
+            </span>
+          </Link>
 
           <svg
             width="20"
@@ -32,7 +44,7 @@ const ShopBanner: React.FC = () => {
           </svg>
 
           <span className="text-black font-poppins text-[1rem] font-light">
-            shop
+            {name}
           </span>
         </div>
       </div>

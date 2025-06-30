@@ -12,7 +12,7 @@ const Home = () => {
   const { products, loading } = useProducts();
 
   // Pegar os primeiros 8 produtos para a seção "Our Products"
-  const productsToShow = products.slice(0, 8); // Ajuste a quantidade se o Figma mostrar diferente
+  const productsToShow = products.slice(0, 8); 
   return (
     <div>
       <Header />

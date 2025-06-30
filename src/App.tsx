@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home/Home";
 import { ShopPage } from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
       <ToastContainer
         position="top-right"

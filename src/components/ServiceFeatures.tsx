@@ -21,13 +21,13 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       <img
         src={icon}
         alt={`${title} icon`}
-        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-[3.75rem] lg:h-[3.75rem] flex-shrink-0"
+        className="w-8 h-8 sm:w-14 sm:h-8 lg:w-[3.75rem] lg:h-[3.75rem] flex-shrink-0"
       />
       <div>
-        <h3 className="text-[#242424] font-poppins text-base sm:text-lg lg:text-[1.5625rem] font-semibold leading-tight whitespace-nowrap">
+        <h3 className="text-[#242424] font-poppins text-base sm:text-lg lg:text-[1rem] font-semibold leading-tight whitespace-nowrap">
           {title}
         </h3>
-        <p className="text-[#898989] font-poppins text-sm sm:text-base lg:text-[1.25rem] font-medium leading-snug whitespace-nowrap">
+        <p className="text-[#898989] font-poppins text-sm sm:text-base lg:text-[0.7rem] font-medium leading-snug whitespace-nowrap">
           {description}
         </p>
       </div>

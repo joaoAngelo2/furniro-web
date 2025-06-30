@@ -29,7 +29,7 @@ export const ShopPage = () => {
     <>
       <Header />
       <div className="w-full">
-        <ShopBanner />
+        <ShopBanner name={'Shop'} exibe={false}/>
         <FilterBar
           itemsPerPage={itemsPerPage}
           onItemsPerPageChange={setItemsPerPage}

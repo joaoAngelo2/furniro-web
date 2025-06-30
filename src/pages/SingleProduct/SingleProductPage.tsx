@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
 import type { ProductHint } from "../../hooks/useProducts";
+import Quantity from "../../components/Quantity";
 
 interface Product {
   id: string;
@@ -266,23 +267,7 @@ const SingleProductPage: React.FC = () => {
             )}
             {/* Quantidade e Botão Add to Cart */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center border border-gray-300 rounded-lg">
-                <button
-                  onClick={decrementQuantity}
-                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
-                >
-                  -
-                </button>
-                <span className="px-4 h-16 border-gray-300 justify-center content-center">
-                  {quantity}
-                </span>
-                <button
-                  onClick={incrementQuantity}
-                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
-                >
-                  +
-                </button>
-              </div>
+              <Quantity/>
               <button
                 onClick={handleAddToCart}
                 className="w-52 h-16 border border-black text-black rounded-lg hover:bg-slate-500 hover:text-white hover:border-slate-500 transition-colors duration-200"
