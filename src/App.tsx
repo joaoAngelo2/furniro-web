@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import { ShopPage } from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
 import Cart from "./pages/Cart/Cart";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart/>} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
       <ToastContainer
         position="top-right"

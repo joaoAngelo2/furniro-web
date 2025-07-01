@@ -94,12 +94,12 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
         <p className="text-[#898989] font-poppins text-[1rem] font-medium leading-[1.5rem] mt-2">
           {product.subtitle}
         </p>
-        <div className="mt-auto flex items-center gap-2">
-          <p className="text-[#3A3A3A] font-poppins text-[1.25rem] font-semibold leading-[1.875rem]">
+        <div className="mt-auto grid grid-cols-2 place-content-between items-center gap-2">
+          <p className="text-[#3A3A3A] font-poppins text-[1rem] font-semibold leading-[1.875rem]">
             {formattedPrice}
           </p>
           {formattedOriginalPrice && (
-            <p className="text-[#B0B0B0] font-poppins text-[1rem] font-normal leading-[1.5rem] line-through">
+            <p className="text-[#B0B0B0] text-center font-poppins text-[0.8rem] font-normal leading-[1.5rem] line-through">
               {formattedOriginalPrice}
             </p>
           )}

@@ -84,7 +84,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/shop"
+              to="/contact"
               className="relative font-medium text-gray-800 group"
             >
               Contact
