@@ -6,6 +6,7 @@ import { ShopPage } from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/checkout" element={<Checkout/>} />
       </Routes>
       <ToastContainer
         position="top-right"

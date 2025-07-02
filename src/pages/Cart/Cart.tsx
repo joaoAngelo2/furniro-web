@@ -11,7 +11,7 @@ const Cart = () => {
         <ShopBanner name={'Cart'} exibe={true}/>
         <div className="w-screen h-[32.8rem] grid place-items-center">
             <div className="w-4/5 h-96 gap-8 flex">
-                <div className="h-full w-2/3 bg-slate-200">
+                <div className="h-full w-2/3 ">
                     <table className="w-full">
                         <thead className="h-14 w-full bg-[#FAF3EA]">
                             <tr className="text-black text-base font-medium font-['Poppins']">

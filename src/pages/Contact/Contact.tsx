@@ -47,10 +47,10 @@ Saturday-Sunday: 9:00 - 21:00</p>
                 </div>
                 <div className="h-full w-full  grid place-items-center">
                     <form action="" className="w-4/5 h-4/5 flex flex-col gap-3">
-                        <label htmlFor="" className="text-black text-base font-medium font-['Poppins']">Your Name:</label><input type="text"  className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="Abc"/>
-                        <label htmlFor="" className="text-black text-base font-medium font-['Poppins']">Email address:</label><input type="text"  className="w-full   h-20 bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="abc@def.com"/>
-                        <label htmlFor="" className="text-black text-base font-medium font-['Poppins']">Subject:</label><input type="text"  className="w-full h-20   bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="This is an optional"/>
-                        <label htmlFor="" className="text-black text-base font-medium font-['Poppins']">Message:</label><textarea className="w-full h-32  bg-white rounded-[10px] border border-neutral-400 py-8 pl-6" placeholder="HI! I'd like to ask about..."/>
+                        <label htmlFor="name" className="text-black text-base font-medium font-['Poppins']">Your Name:</label><input type="text" id="name" className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="Abc"/>
+                        <label htmlFor="email" className="text-black text-base font-medium font-['Poppins']">Email address:</label><input type="text" id="email"  className="w-full   h-20 bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="abc@def.com"/>
+                        <label htmlFor="subject" className="text-black text-base font-medium font-['Poppins']">Subject:</label><input type="text" id="subject" className="w-full h-20   bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="This is an optional"/>
+                        <label htmlFor="message" className="text-black text-base font-medium font-['Poppins']">Message:</label><textarea id="message" className="w-full h-32  bg-white rounded-[10px] border border-neutral-400 py-8 pl-6" placeholder="HI! I'd like to ask about..."/>
                         <button type="submit" className="w-60 h-14 bg-yellow-600 rounded-[5px] border border-yellow-600  text-white text-base font-normal font-['Poppins']">Submit</button>
                     </form>
                 </div>
