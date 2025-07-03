@@ -3,6 +3,9 @@ import Header from "../../components/Header"
 import Quantity from "../../components/Quantity"
 import ServiceFeatures from "../../components/ServiceFeatures"
 import ShopBanner from "../../components/ShopBanner"
+import {Link} from "react-router-dom";
+
+
 
 const Cart = () => {
   return (
@@ -11,8 +14,8 @@ const Cart = () => {
         <ShopBanner name={'Cart'} exibe={true}/>
         <div className="w-screen h-[32.8rem] grid place-items-center">
             <div className="w-4/5 h-96 gap-8 flex">
-                <div className="h-full w-2/3 ">
-                    <table className="w-full">
+                <div className="h-full w-2/3">
+                    <table className="w-full border-spacing-y-3 border-separate">
                         <thead className="h-14 w-full bg-[#FAF3EA]">
                             <tr className="text-black text-base font-medium font-['Poppins']">
                                 <th></th>
@@ -23,7 +26,18 @@ const Cart = () => {
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody className="w-full">
+                        <tbody className="w-full text-center">
+                            <tr>
+                                <td></td>
+                                <td colSpan={2}>
+                                    <div className="bg-[url('assets/home-1.png')] w-24 h-24 bg-cover rounded-md"></div>
+                                </td>
+                                <td>Asgard Sofa</td>
+                                <td>Rs. 250.000,00</td>
+                                <td className="w-6"><Quantity/></td>
+                                <td>Rs. 250.000,00</td>
+                                <td></td>
+                            </tr>
                             <tr>
                                 <td></td>
                                 <td colSpan={2}>
@@ -49,7 +63,7 @@ const Cart = () => {
                             <div className="text-black text-base font-medium font-['Poppins']">Total</div>
                             <div className="text-yellow-600 text-xl font-medium font-['Poppins']">precoTotal</div>
                         </div>
-                        <button className="w-11/12 h-14 rounded-2xl border border-black">Check Out</button>
+                        <button className="w-11/12 h-14 rounded-2xl border border-black"><Link to="/checkout">Check Out</Link></button>
                     </div>
                 </div>
             </div>

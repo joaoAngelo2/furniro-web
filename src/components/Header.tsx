@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -101,7 +102,7 @@ const Header: React.FC = () => {
               alt="Ícone de Usuário"
             />
           </button>
-          <button aria-label="Shopping Cart">
+          <button aria-label="Shopping Cart" onFocus={() => setIsCartOpen(!isCartOpen)} >
             <img
               className="w-6"
               src="/src/assets/car-shop.svg"
@@ -110,6 +111,27 @@ const Header: React.FC = () => {
           </button>
         </div>
       </nav>
+
+      {isCartOpen && (
+        <div className="fixed top-0 right-0 h-[46.65rem] w-96 bg-white shadow-lg z-50 flex flex-col">
+          <div className="flex justify-between items-center p-4 ">
+            <h2 className="text-black text-2xl font-semibold pb-3 font-['Poppins'] w-full  border-b">Shopping Cart</h2>
+            <button 
+              onClick={() => setIsCartOpen(false)}
+              className="text-gray-500 pb-3 hover:text-gray-700 "
+            >
+              <img src="/src/assets/group.svg" alt="" className="w-5 h-5" />
+            </button>
+          </div>
+          <div className="flex-1 p-4">
+            <ul className="space-y-2">
+              <li>Produto 1</li>
+              <li>Produto 2</li>
+              <li>Produto 3</li>
+            </ul>
+          </div>
+        </div>
+      )}
 
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white w-full py-4 shadow-lg">

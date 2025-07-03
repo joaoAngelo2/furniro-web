@@ -57,7 +57,7 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
             onClick={handleAddToCart}
           >
             Add to cart
-          </button>
+          </button>  
           <div className="flex gap-4 mt-4">
             <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
               <img src={ShareIcon} alt="Share" className="w-[1rem] h-[1rem]" />
