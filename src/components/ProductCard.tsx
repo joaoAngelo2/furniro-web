@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
 import { type ProductHint } from "../hooks/useProducts";
-
 import ShareIcon from "../assets/icons/gridicons_share.svg";
 import CompareIcon from "../assets/icons/compare-svgrepo-com.svg";
 import LikeIcon from "../assets/icons/heart.svg";
@@ -14,34 +14,62 @@ interface ProductCardProps {
   subtitle?: string;
   price: number;
   originalPrice?: number;
-  thumbnail?: string;
+  thumbnail: string;
   hint?: ProductHint;
 }
+
+const formatPrice = (price: number) => 
+  new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  }).format(price);
+
+const ActionButton = ({ icon, label }: { icon: string; label: string }) => (
+  <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
+    <img src={icon} alt={label} className="w-[1rem] h-[1rem]" />
+    {label}
+  </span>
+);
+
+const ProductOverlay = ({ onAddToCart }: { onAddToCart: (e: React.MouseEvent) => void }) => (
+  <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+    <button
+      className="w-[12.625rem] h-[3rem] flex-shrink-0 bg-white text-[#B88E2F] font-poppins text-[1rem] font-semibold leading-[150%] rounded-[0.3125rem] hover:bg-[#B88E2F] hover:text-white transition-colors"
+      onClick={onAddToCart}
+    >
+      Add to cart
+    </button>
+    <div className="flex gap-4 mt-4">
+      <ActionButton icon={ShareIcon} label="Share" />
+      <ActionButton icon={CompareIcon} label="Compare" />
+      <ActionButton icon={LikeIcon} label="Like" />
+    </div>
+  </div>
+);
 
 const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const formattedPrice = new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  }).format(product.price);
-
-  const formattedOriginalPrice = product.originalPrice
-    ? new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR",
-      }).format(product.originalPrice)
-    : null;
+  const { formattedPrice, formattedOriginalPrice } = useMemo(() => ({
+    formattedPrice: formatPrice(product.price),
+    formattedOriginalPrice: product.originalPrice ? formatPrice(product.originalPrice) : null,
+  }), [product.price, product.originalPrice]);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
+    dispatch(addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      thumbnail: product.thumbnail,
+    }));
     toast.success(`${product.name} adicionado ao carrinho!`);
   };
 
-  const handleCardClick = () => {
-    navigate(`/product/${product.id}`);
-  };
+  const handleCardClick = () => navigate(`/product/${product.id}`);
 
   return (
     <div
@@ -50,38 +78,11 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
     >
-      {isHovered && (
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-          <button
-            className="w-[12.625rem] h-[3rem] flex-shrink-0 bg-white text-[#B88E2F] font-poppins text-[1rem] font-semibold leading-[150%] rounded-[0.3125rem] hover:bg-[#B88E2F] hover:text-white transition-colors"
-            onClick={handleAddToCart}
-          >
-            Add to cart
-          </button>  
-          <div className="flex gap-4 mt-4">
-            <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
-              <img src={ShareIcon} alt="Share" className="w-[1rem] h-[1rem]" />
-              Share
-            </span>
-            <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
-              <img
-                src={CompareIcon}
-                alt="Compare"
-                className="w-[1rem] h-[1rem]"
-              />
-              Compare
-            </span>
-            <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
-              <img src={LikeIcon} alt="Like" className="w-[1rem] h-[1rem]" />
-              Like
-            </span>
-          </div>
-        </div>
-      )}
+      {isHovered && <ProductOverlay onAddToCart={handleAddToCart} />}
 
       <div className="w-full h-[18.8125rem] flex-shrink-0 bg-gray-200 relative">
         <img
-          src={`${product.thumbnail}`}
+          src={product.thumbnail}
           alt={product.name}
           className="w-full h-full object-cover"
         />
@@ -105,40 +106,28 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
           )}
         </div>
       </div>
+
       {product.hint !== null && <ProductHintBall hint={product.hint} />}
     </div>
   );
 };
 
-interface ProductHintProps {
-  hint: ProductHint | undefined;
-}
+const ProductHintBall = ({ hint }: { hint: ProductHint | undefined }) => {
+  if (!hint) return null;
 
-function ProductHintBall({ hint }: ProductHintProps) {
-  let colorClass: string = "";
-  let label: string = "";
+  const config = hint === "New" 
+    ? { colorClass: "bg-[#2EC1AC]", label: "New" }
+    : typeof hint === "number" 
+    ? { colorClass: "bg-[#E97171]", label: `-${hint}%` }
+    : null;
 
-  if (hint === null) {
-    return null;
-  }
-
-  if (hint === "New") {
-    colorClass = "bg-hint-new-green";
-    label = "New";
-  } else if (typeof hint === "number") {
-    colorClass = "bg-hint-discount-red";
-    label = `-${hint}%`;
-  } else {
-    return null;
-  }
-
-  const className = `flex justify-center items-center absolute rounded-[50%] top-2 right-2 w-[3rem] h-[3rem] ${colorClass} z-10`;
+  if (!config) return null;
 
   return (
-    <div className={className}>
-      <label className="text-white">{label}</label>
+    <div className={`flex justify-center items-center absolute rounded-full top-2 right-2 w-[3rem] h-[3rem] ${config.colorClass} z-10`}>
+      <span className="text-white">{config.label}</span>
     </div>
   );
-}
+};
 
 export default ProductCard;

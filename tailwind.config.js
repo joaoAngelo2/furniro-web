@@ -20,14 +20,14 @@ export default {
       },
       backgroundImage: {
         "fundo-home":
-          "url('/src/assets/98fb219fa11f805aade2224f1d6658764a2395df.jpg')",
-        "dining-img": "url('/src/assets/home-1.png')",
+          "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/98fb219fa11f805aade2224f1d6658764a2395df.jpg')",
+        "dining-img": "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/home-1.png')",
         "living-img":
-          "url('/src/assets/b7e392a7f3961ca2b1edab00f7a7640b3c2ed666.png')",
+          "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/b7e392a7f3961ca2b1edab00f7a7640b3c2ed666.png')",
         "bedroom-img": "url('/src/assets/bedroom.png')",
         "inner-peace": "url('/src/assets/living.png')",
         "beatiful-room-2":
-          "url('/src/assets/acc48179d1b18b523420e79dda1e92951ecde49b.png')",
+          "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/acc48179d1b18b523420e79dda1e92951ecde49b.png')",
       },
       colors: {
         "amarelo-bloco": "#FFF3E3",

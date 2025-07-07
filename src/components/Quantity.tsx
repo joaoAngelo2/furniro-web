@@ -1,32 +1,48 @@
+import { useDispatch, useSelector } from 'react-redux';
+import {type RootState } from '../store';
+import { updateQuantity } from '../slices/cartSlice';
 
-import { useState } from 'react';
-
-
-const Quantity = () => {
-    const [quantity, setQuantity] = useState<number>(1);
-    const incrementQuantity = () => setQuantity((prev) => prev + 1);
-    const decrementQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-  return (
-    <div>
-      <div className="flex items-center border border-gray-300 rounded-lg">
-            <button
-                  onClick={decrementQuantity}
-                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
-                >
-                  -
-                </button>
-                <span className="px-4 h-16 border-gray-300 justify-center content-center">
-                  {quantity}
-                </span>
-                <button
-                  onClick={incrementQuantity}
-                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
-                >
-                  +
-                </button>
-        </div>
-    </div>
-  )
+interface QuantityProps {
+  productId: string;
 }
 
-export default Quantity
+const Quantity = ({ productId }: QuantityProps) => {
+  const dispatch = useDispatch();
+
+  const quantity = useSelector((state: RootState) => {
+    const item = state.cart.items.find((item) => item.id === productId);
+    return item ? item.quantity : 1;
+  });
+
+  const incrementQuantity = () => {
+    dispatch(updateQuantity({ id: productId, quantity: quantity + 1 }));
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      dispatch(updateQuantity({ id: productId, quantity: quantity - 1 }));
+    }
+  };
+
+  return (
+    <div className="flex items-center border border-gray-300 rounded-lg">
+      <button
+        onClick={decrementQuantity}
+        className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
+      >
+        -
+      </button>
+      <span className="px-4 h-16 flex items-center justify-center">
+        {quantity}
+      </span>
+      <button
+        onClick={incrementQuantity}
+        className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
+      >
+        +
+      </button>
+    </div>
+  );
+};
+
+export default Quantity;

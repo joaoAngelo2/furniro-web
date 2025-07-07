@@ -76,7 +76,6 @@ describe('Contact Component', () => {
     
     const mockSubmit = jest.fn(e => e.preventDefault());
     
-    // Find the form element by tag name
     const form = submitButton.closest('form');
     if (form) {
       form.onsubmit = mockSubmit;

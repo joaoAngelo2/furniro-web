@@ -15,12 +15,15 @@
     "test:coverage-watch": "jest --coverage --watchAll"
   },
   "dependencies": {
+    "@clerk/react-router": "^1.6.4",
     "@hookform/resolvers": "^5.0.1",
+    "@reduxjs/toolkit": "^2.8.2",
     "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.59.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.1",
     "react-toastify": "^11.0.5",
     "zod": "^3.25.48"

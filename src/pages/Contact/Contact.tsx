@@ -1,3 +1,4 @@
+import { RedirectToSignIn, SignedOut } from "@clerk/react-router"
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
 import ServiceFeatures from "../../components/ServiceFeatures"
@@ -7,6 +8,7 @@ const Contact = () => {
   return (
     <div>
         <Header/>
+        <SignedOut></SignedOut>
         <ShopBanner name={'contact'} exibe={true}/>
         <div className="w-screen h-[71.5rem]">
             <div className=" pt-24 grid place-items-center">

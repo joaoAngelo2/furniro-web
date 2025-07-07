@@ -11,7 +11,6 @@ import ProductCard from "../../components/ProductCard";
 const Home = () => {
   const { products, loading } = useProducts();
 
-  // Pegar os primeiros 8 produtos para a seção "Our Products"
   const productsToShow = products.slice(0, 8); 
   return (
     <div>
@@ -53,7 +52,6 @@ const Home = () => {
       <section>
         <div className="w-screen text-center">
           <p className="text-3xl font-bold text-zinc-800 mb-8">Our Products</p>
-          {/* Se estiver carregando, mostre uma mensagem de loading */}
           {loading ? (
             <div className="text-center">Carregando produtos...</div>
           ) : (

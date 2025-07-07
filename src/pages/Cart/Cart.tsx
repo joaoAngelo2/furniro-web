@@ -4,10 +4,14 @@ import Quantity from "../../components/Quantity"
 import ServiceFeatures from "../../components/ServiceFeatures"
 import ShopBanner from "../../components/ShopBanner"
 import {Link} from "react-router-dom";
-
+import {type RootState } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Cart = () => {
+    const dispatch =  useDispatch();
+    const cartItems = useSelector((state: RootState) => state.cart.items);
+
   return (
     <div>
         <Header/>
@@ -27,28 +31,19 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody className="w-full text-center">
+                        {cartItems.map(item => (
                             <tr>
                                 <td></td>
                                 <td colSpan={2}>
-                                    <div className="bg-[url('assets/home-1.png')] w-24 h-24 bg-cover rounded-md"></div>
+                                    <div className="bg-cover w-24 h-24 bg-center rounded-md" style={{ backgroundImage: `url(${item.thumbnail})` }}></div>
                                 </td>
-                                <td>Asgard Sofa</td>
-                                <td>Rs. 250.000,00</td>
-                                <td className="w-6"><Quantity/></td>
-                                <td>Rs. 250.000,00</td>
+                                <td>{item.name}</td>
+                                <td>{item.price}</td>
+                                <td className="w-6"><Quantity productId={item.id}/></td>
+                                <td>{item.price * item.quantity}</td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td colSpan={2}>
-                                    <div className="bg-[url('assets/home-1.png')] w-24 h-24 bg-cover rounded-md"></div>
-                                </td>
-                                <td>Asgard Sofa</td>
-                                <td>Rs. 250.000,00</td>
-                                <td className="w-6"><Quantity/></td>
-                                <td>Rs. 250.000,00</td>
-                                <td></td>
-                            </tr>
+                        ))}
                         </tbody>
                     </table>
                 </div>

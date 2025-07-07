@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 interface FilterBarProps {
   itemsPerPage: number;
   onItemsPerPageChange: (value: number) => void;

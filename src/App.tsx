@@ -6,7 +6,13 @@ import { ShopPage } from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
-import Checkout from "./pages/Checkout/Checkout";
+import Checkout from "./pages/Checkout/Checkout"
+import { Protect, SignedOut } from "@clerk/react-router";
+import { RedirectToSignIn } from "@clerk/react-router";
+
+
+
+
 
 function App() {
   return (
@@ -16,8 +22,17 @@ function App() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/checkout" element={<Checkout/>} />
+        
+        <Route path="/contact" element={
+          <Protect fallback={<RedirectToSignIn />}>
+            <Contact/>
+          </Protect>
+          } />
+        <Route path="/checkout" element={
+          <Protect fallback={<RedirectToSignIn />}>
+            <Checkout/>
+          </Protect>
+          } />
       </Routes>
       <ToastContainer
         position="top-right"
