@@ -7,6 +7,7 @@ import { type ProductHint } from "../hooks/useProducts";
 import ShareIcon from "../assets/icons/gridicons_share.svg";
 import CompareIcon from "../assets/icons/compare-svgrepo-com.svg";
 import LikeIcon from "../assets/icons/heart.svg";
+import { formatPriceUSD } from "../utils/formattedPrice";
 
 interface ProductCardProps {
   id: string;
@@ -53,8 +54,8 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
   const dispatch = useDispatch();
 
   const { formattedPrice, formattedOriginalPrice } = useMemo(() => ({
-    formattedPrice: formatPrice(product.price),
-    formattedOriginalPrice: product.originalPrice ? formatPrice(product.originalPrice) : null,
+    formattedPrice: "Rp. "+formatPriceUSD(product.price),
+    formattedOriginalPrice: product.originalPrice ? "Rp."+formatPriceUSD(product.originalPrice) : null,
   }), [product.price, product.originalPrice]);
 
   const handleAddToCart = (e: React.MouseEvent) => {

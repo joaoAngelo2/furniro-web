@@ -25,7 +25,7 @@ const Quantity = ({ productId }: QuantityProps) => {
   };
 
   return (
-    <div className="flex items-center border border-gray-300 rounded-lg">
+    <div className="flex w-32 items-center border border-gray-300 rounded-lg">
       <button
         onClick={decrementQuantity}
         className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"

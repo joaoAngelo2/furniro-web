@@ -16,9 +16,10 @@ const Checkout: React.FC = () => {
 
     const onSubmit = (data: FormSchema) => {
         console.log(data);
-        toast.success("Formulário enviado com sucesso!");
+        toast.success("Pedido realizado com sucesso!");
     };
 
+    const [selectedPayment, setSelectedPayment] = useState<string>("");
     const [streetAddress, setStreetAddress] = useState<string>('');
     const [city, setCity] = useState<string>('');
     const [region, setRegion] = useState<string>('');
@@ -59,14 +60,14 @@ const Checkout: React.FC = () => {
                             <div className="w-1/2 flex gap-4 flex-col">
                                 <label htmlFor="fname" className="text-black  text-base font-medium font-['Poppins']">First Name:</label>
                                 <input type="text" id="fname" className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" {...register("firstName")}/>
-                                {errors.fname && <span className="text-red-500 text-sm">{errors.fname.message}</span>}
+                                {errors.firstName && <span className="text-red-500 text-sm">{errors.firstName.message}</span>}
                             </div>
                             
 
                             <div className="w-1/2 gap-4 flex flex-col">
                                 <label htmlFor="lname" className="text-black  text-base font-medium font-['Poppins']">Last Name:</label>
                                 <input type="text" id="lname" className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" {...register("lname")}/>
-                                {errors.lname && <span className="text-red-500 text-sm">{errors.lname.message}</span>}
+                                {errors.lastName && <span className="text-red-500 text-sm">{errors.lastName.message}</span>}
                             </div>
                         </div>
                     </div>
@@ -101,56 +102,72 @@ const Checkout: React.FC = () => {
                         </div>
                     </div>
                     <div className="h-px bg-zinc-300 w-4/5 my-4"></div>
-                    <div className="w-11/12 h-[90%]  flex flex-col gap-4">
-                        <div className="flex items-center gap-2">
-                            <input 
-                              type="radio" 
-                              name="payment" 
-                              id="dtransfer" 
-                              className="focus:ring-black checked:bg-black focus:bg-black peer/dtransfer"
-                              onChange={(e) => {
-                                if(e.target.checked) {
-                                  e.target.classList.add('text-black');
-                                  e.target.classList.remove('text-neutral-400');
-                                }
-                              }}
-                            />
-                            <label htmlFor="dtransfer" className="peer-checked/dtransfer:text-black text-neutral-400">Direct bank transfer</label>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <input 
-                              type="radio" 
-                              name="payment" 
-                              id="cdelivery" 
-                              className="focus:ring-black checked:bg-black peer/cdelivery"
-                              onChange={(e) => {
-                                if(e.target.checked) {
-                                  e.target.classList.add('text-black');
-                                  e.target.classList.remove('text-neutral-400');
-                                }
-                              }}
-                            />
-                            <label htmlFor="cdelivery" className="peer-checked/cdelivery:text-black text-neutral-400">Cash on delivery</label>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <input 
-                              type="radio" 
-                              name="payment" 
-                              id="other" 
-                              className="focus:ring-black checked:bg-black peer/other"
-                              onChange={(e) => {
-                                if(e.target.checked) {
-                                  e.target.classList.add('text-black');
-                                  e.target.classList.remove('text-neutral-400');
-                                }
-                              }}
-                            />
-                            <label htmlFor="other" className="peer-checked/other:text-black text-neutral-400">Other</label>
-                        </div>
+                        <div className="flex w-full flex-col gap-4">
+                            <div className="flex w-full items-start gap-2">
+                                <input 
+                                type="radio" 
+                                name="payment" 
+                                id="dtransfer" 
+                                onChange={() => setSelectedPayment("dtransfer")}
+                                className="w-4 h-4 rounded-full border-2 border-black appearance-none checked:bg-black checked:border-black transition-colors cursor-pointer"
+                                />
+                                <div className="flex flex-col">
+                                <label htmlFor="dtransfer" className="peer-checked/dtransfer:text-black text-neutral-400">
+                                    Direct bank transfer
+                                </label>
+                                {selectedPayment === "dtransfer" && (
+                                    <div className="w-11/12 text-neutral-400 text-base font-light font-['Poppins']">
+                                    Use your bank app to transfer to our account. Order will be processed after confirmation.
+                                    </div>
+                                )}
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-2">
+                                <input 
+                                type="radio" 
+                                name="payment" 
+                                id="cdelivery" 
+                                onChange={() => setSelectedPayment("cdelivery")}
+                                className="w-4 h-4 rounded-full border-2 border-black appearance-none checked:bg-black checked:border-black transition-colors cursor-pointer"
+                                />
+                                <div className="flex flex-col">
+                                <label htmlFor="cdelivery" className="peer-checked/cdelivery:text-black text-neutral-400">
+                                    Cash on delivery
+                                </label>
+                                {selectedPayment === "cdelivery" && (
+                                    <p className="w-11/12 text-neutral-400 text-base font-light font-['Poppins']">
+Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                                    </p>
+                                )}
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-2">
+                                <input 
+                                type="radio" 
+                                name="payment" 
+                                id="other" 
+                                onChange={() => setSelectedPayment("other")}
+                                className="w-4 h-4 rounded-full border-2 border-black appearance-none checked:bg-black checked:border-black transition-colors cursor-pointer"
+                                />
+                                <div className="flex flex-col">
+                                <label htmlFor="other" className="peer-checked/other:text-black text-neutral-400">
+                                    Other
+                                </label>
+                                {selectedPayment === "other" && (
+                                    <p className="w-11/12 text-neutral-400 text-base font-light font-['Poppins']">
+                                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                                    </p>
+                                )}
+                                </div>
+                            </div>
+                            </div>
+
                         <p className="text-black text-base font-light font-['Poppins']">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <strong>privacy policy</strong>.</p>
                         <button className="w-4/5 mx-auto h-14 rounded-2xl border border-black" type="submit">Place order</button>
                     </div>
-                </div>
+                
             </form>
             
         </div>
