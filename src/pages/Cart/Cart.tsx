@@ -19,7 +19,7 @@ const Cart = () => {
       <ShopBanner name={"Cart"} exibe={true} />
       <div className="w-screen grid place-items-center">
         <div className="w-4/5 gap-8 flex flex-col lg:flex-row">
-          <div className="h-[30rem] w-full lg:w-2/3 overflow-y-auto">
+          <div className="h-[30rem] w-full lg:w-2/3 overflow-y-auto my-10">
             <table className="w-full border-spacing-y-3 border-separate">
               <thead className="h-14 bg-[#FAF3EA] sticky top-0 z-10">
                 <tr className="text-black text-base font-medium font-['Poppins'] text-left">
@@ -53,9 +53,10 @@ const Cart = () => {
             </table>
           </div>
 
-          <div className="h-full w-full lg:w-1/3 bg-[#FAF3EA] grid place-items-center py-10">
-            <div className="w-4/5 flex flex-col gap-6">
-              <h1 className="text-black text-3xl font-semibold font-['Poppins']">Cart Totals</h1>
+          <div className="h-full w-full lg:w-1/3 bg-[#FAF3EA] grid place-items-center my-10">
+            <div className="w-full h-96 grid place-items-center  ">
+              <div className="w-4/5 h-4/5 flex flex-col place-content-center justify-between">
+              <h1 className="text-black text-3xl font-semibold font-['Poppins'] text-center">Cart Totals</h1>
 
               <div className="flex justify-between">
                 <span className="text-black text-base font-medium font-['Poppins']">Subtotal</span>
@@ -72,6 +73,7 @@ const Cart = () => {
                   Check Out
                 </button>
               </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,104 +1,116 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
+import { toast } from 'react-toastify';
 import Contact from '../pages/Contact/Contact';
+import '@testing-library/jest-dom';
+
+jest.mock('react-toastify', () => ({
+  toast: {
+    success: jest.fn()
+  }
+}));
 
 jest.mock('../components/Header', () => {
   return function MockHeader() {
-    return <div data-testid="mock-header" />;
+    return <div data-testid="mock-header">Header</div>;
   };
 });
 
 jest.mock('../components/Footer', () => {
   return function MockFooter() {
-    return <div data-testid="mock-footer" />;
+    return <div data-testid="mock-footer">Footer</div>;
   };
 });
 
 jest.mock('../components/ShopBanner', () => {
   return function MockShopBanner() {
-    return <div data-testid="mock-shop-banner" />;
+    return <div data-testid="mock-shop-banner">Shop Banner</div>;
   };
 });
 
 jest.mock('../components/ServiceFeatures', () => {
   return function MockServiceFeatures() {
-    return <div data-testid="mock-service-features" />;
+    return <div data-testid="mock-service-features">Service Features</div>;
   };
 });
 
 describe('Contact Component', () => {
   beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('renders contact form with all required fields', () => {
     render(<Contact />);
+    
+    expect(screen.getByLabelText(/your name:/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/email address:/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/subject:/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/message:/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
   });
 
-  test('renders main heading and description', () => {
-    expect(screen.getByText('Get In Touch With Us')).toBeInTheDocument();
-    expect(screen.getByText(/For More Information About Our Product & Services/)).toBeInTheDocument();
+  test('displays contact information correctly', () => {
+    render(<Contact />);
+    
+    expect(screen.getByText(/236 5th SE Avenue/i)).toBeInTheDocument();
+    expect(screen.getByText(/Mobile: \+\(84\) 546-6789/i)).toBeInTheDocument();
+    expect(screen.getByText(/Monday-Friday: 9:00 - 22:00/i)).toBeInTheDocument();
   });
 
-  test('renders contact information section', () => {
-    expect(screen.getByText('Address')).toBeInTheDocument();
-    expect(screen.getByText(/236 5th SE Avenue/)).toBeInTheDocument();
-    expect(screen.getByText('Phone')).toBeInTheDocument();
-    expect(screen.getByText(/Mobile: \+\(84\) 546-6789/)).toBeInTheDocument();
-    expect(screen.getByText('Working Time')).toBeInTheDocument();
-    expect(screen.getByText(/Monday-Friday: 9:00 - 22:00/)).toBeInTheDocument();
-  });
-
-  test('renders contact form with all fields', () => {
-    expect(screen.getByLabelText('Your Name:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Email address:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Subject:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Message:')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument();
-  });
-
-  test('form inputs are working correctly', async () => {
-    const nameInput = screen.getByLabelText('Your Name:');
-    const emailInput = screen.getByLabelText('Email address:');
-    const subjectInput = screen.getByLabelText('Subject:');
-    const messageInput = screen.getByLabelText('Message:');
+  test('submits form with valid data successfully', async () => {
+    render(<Contact />);
+    
+    const nameInput = screen.getByLabelText(/your name:/i);
+    const emailInput = screen.getByLabelText(/email address:/i);
+    const subjectInput = screen.getByLabelText(/subject:/i);
+    const messageInput = screen.getByLabelText(/message:/i);
+    const submitButton = screen.getByRole('button', { name: /submit/i });
 
     await userEvent.type(nameInput, 'John Doe');
     await userEvent.type(emailInput, 'john@example.com');
     await userEvent.type(subjectInput, 'Test Subject');
     await userEvent.type(messageInput, 'Test Message');
 
-    expect(nameInput).toHaveValue('John Doe');
-    expect(emailInput).toHaveValue('john@example.com');
-    expect(subjectInput).toHaveValue('Test Subject');
-    expect(messageInput).toHaveValue('Test Message');
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(toast.success).toHaveBeenCalledWith('Your message has been sent successfully!');
+    });
   });
 
-  test('form submission prevents default behavior', () => {
-    const submitButton = screen.getByRole('button', { name: 'Submit' });
+  test('displays validation errors for empty required fields', async () => {
+    render(<Contact />);
     
-    const mockSubmit = jest.fn(e => e.preventDefault());
-    
-    const form = submitButton.closest('form');
-    if (form) {
-      form.onsubmit = mockSubmit;
-      fireEvent.click(submitButton);
-      expect(mockSubmit).toHaveBeenCalled();
-    } else {
-      // If no form found, just test that button exists and is clickable
-      expect(submitButton).toBeInTheDocument();
-      fireEvent.click(submitButton);
-    }
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Minimum 3 characters required/i)).toBeInTheDocument();
+      expect(screen.getByText(/Required field/i)).toBeInTheDocument();
+    });
   });
 
-  test('renders all required child components', () => {
+  test('validates email format', async () => {
+    render(<Contact />);
+    
+    const emailInput = screen.getByLabelText(/email address:/i);
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+
+    await userEvent.type(emailInput, 'invalid-email');
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Invalid email/i)).toBeInTheDocument();
+    });
+  });
+
+  test('renders all component dependencies', () => {
+    render(<Contact />);
+    
     expect(screen.getByTestId('mock-header')).toBeInTheDocument();
     expect(screen.getByTestId('mock-footer')).toBeInTheDocument();
     expect(screen.getByTestId('mock-shop-banner')).toBeInTheDocument();
     expect(screen.getByTestId('mock-service-features')).toBeInTheDocument();
-  });
-
-  test('contact form inputs have correct placeholders', () => {
-    expect(screen.getByPlaceholderText('Abc')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('abc@def.com')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('This is an optional')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("HI! I'd like to ask about...")).toBeInTheDocument();
   });
 });
