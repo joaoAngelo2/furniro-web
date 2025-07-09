@@ -106,9 +106,7 @@ const SingleProductPage: React.FC = () => {
 
 
 
-  // --- Função para adicionar ao carrinho (só feedback por enquanto) ---
   const handleAddToCart = () => {
-    // implementaria a lógica de adicionar ao carrinho,
     if (product) {
       triggerToast(`${product.name} (x${quantity}) adicionado ao carrinho!`);
     } else {

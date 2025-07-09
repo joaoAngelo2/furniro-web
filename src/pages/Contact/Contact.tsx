@@ -1,23 +1,22 @@
-import { SignedOut } from "@clerk/react-router"
+import { RedirectToSignIn, SignedOut } from "@clerk/react-router"
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
 import ServiceFeatures from "../../components/ServiceFeatures"
 import ShopBanner from "../../components/ShopBanner"
-import {type FormSchema } from "../../schemas/checkoutSchema";
-import { useForms } from "../../hooks/useForms"
+import {type ContactSchema} from "../../schemas/contactSchema";
+import { useForms } from "../../hooks/useCheckoutForms"
 
 
 const Contact = () => {
     const {register, handleSubmit, errors} = useForms();
 
-    const onSubmit = (data: FormSchema) => {
+    const onSubmit = (data: ContactSchema) => {
         console.log(data);
     };
 
   return (
     <div>
         <Header/>
-        <SignedOut></SignedOut>
         <ShopBanner name={'contact'} exibe={true}/>
         <div className="w-screen h-[71.5rem]">
             <div className=" pt-24 grid place-items-center">
@@ -57,7 +56,7 @@ Saturday-Sunday: 9:00 - 21:00</p>
                     </div>
                 </div>
                 <div className="h-full w-full  grid place-items-center">
-                    <form action="" className="w-4/5 h-4/5 flex flex-col gap-10" onSubmit={handleSubmit(onSubmit)}>
+                    <form action='\checkout' className="w-4/5 h-4/5 flex flex-col gap-10" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col">
                             <label htmlFor="name" className="text-black text-base font-medium font-['Poppins']">Your Name:</label>
                             <input type="text" id="name" className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6" placeholder="Abc" {...register('name')}/>
@@ -75,7 +74,7 @@ Saturday-Sunday: 9:00 - 21:00</p>
                         <div>
                             <label htmlFor="message" className="text-black text-base font-medium font-['Poppins']">Message:</label>
                             <textarea id="message" className="w-full h-32  bg-white rounded-[10px] border border-neutral-400 py-8 pl-6" placeholder="HI! I'd like to ask about..." {...register('message')}/>
-                            {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
+                            
                         </div>
                         <button type="submit" className="w-60 h-14 bg-yellow-600 rounded-[5px] border border-yellow-600  text-white text-base font-normal font-['Poppins']">Submit</button>
                     </form>

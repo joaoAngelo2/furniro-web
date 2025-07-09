@@ -5,18 +5,18 @@ import ShopBanner from "../../components/ShopBanner";
 import { toast } from "react-toastify";
 import { type RootState } from "../../store";
 import React from "react";
-import { useForms } from "../../hooks/useForms";
-import { type FormSchema } from "../../schemas/checkoutSchema";
+import { useCheckoutForms } from "../../hooks/useCheckoutForms";
+import { type CheckoutSchema } from "../../schemas/checkoutSchema";
 import { useSelector } from "react-redux";
 import { formatPriceUSD } from "../../utils/formattedPrice";
 
 const Checkout: React.FC = () => {
   const total = useSelector((state: RootState) => state.cart.total);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const { register, handleSubmit, errors, setValue, watch } = useForms();
+  const { register, handleSubmit, errors, setValue, watch } = useCheckoutForms();
 
 
-  const onSubmit = (data: FormSchema) => {
+  const onSubmit = (data: CheckoutSchema) => {
     console.log(data);
     toast.success("Pedido realizado com sucesso!");
   };
@@ -45,9 +45,9 @@ const Checkout: React.FC = () => {
     <div>
       <Header />
       <ShopBanner name={"Checkout"} exibe={true} />
-      <div className="w-full h-[114.32rem] grid place-items-center">
+      <div className="w-full h-[150rem] md:h-[114.32rem] grid place-items-center">
          <form
-            className="w-11/12 h-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"
+            className="w-11/12 md:h-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"
             onSubmit={(e) => {
             e.preventDefault();
             console.log("Raw form submit triggered!");

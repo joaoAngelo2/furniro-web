@@ -1,13 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCartModal } from "../hooks/useCartModal";
+import { type RootState } from "../store";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
 import { type ProductHint } from "../hooks/useProducts";
-import ShareIcon from "../assets/icons/gridicons_share.svg";
-import CompareIcon from "../assets/icons/compare-svgrepo-com.svg";
-import LikeIcon from "../assets/icons/heart.svg";
 import { formatPriceUSD } from "../utils/formattedPrice";
+import { setCartOpen } from '../slices/cartModalSlice'; 
+
 
 interface ProductCardProps {
   id: string;
@@ -27,6 +26,7 @@ const ActionButton = ({ icon, label }: { icon: string; label: string }) => (
 );
 
 const ProductOverlay = ({ onAddToCart }: { onAddToCart: (e: React.MouseEvent) => void }) => (
+  
   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
     <button
       className="w-[12.625rem] h-[3rem] flex-shrink-0 bg-white text-[#B88E2F] font-poppins text-[1rem] font-semibold leading-[150%] rounded-[0.3125rem] hover:bg-[#B88E2F] hover:text-white transition-colors"
@@ -35,9 +35,9 @@ const ProductOverlay = ({ onAddToCart }: { onAddToCart: (e: React.MouseEvent) =>
       Add to cart
     </button>
     <div className="flex gap-4 mt-4">
-      <ActionButton icon={ShareIcon} label="Share" />
-      <ActionButton icon={CompareIcon} label="Compare" />
-      <ActionButton icon={LikeIcon} label="Like" />
+      <ActionButton icon={"https://furniro-web.s3.us-east-2.amazonaws.com/assets/icons/gridicons_share.svg"} label="Share" />
+      <ActionButton icon={"https://furniro-web.s3.us-east-2.amazonaws.com/assets/icons/compare-svgrepo-com.svg"} label="Compare" />
+      <ActionButton icon={"https://furniro-web.s3.us-east-2.amazonaws.com/assets/icons/heart.svg"} label="Like" />
     </div>
   </div>
 );
@@ -46,7 +46,6 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { setIsCartOpen } = useCartModal();
 
   const { formattedPrice, formattedOriginalPrice } = useMemo(() => ({
     formattedPrice: "Rp. "+formatPriceUSD(product.price),
@@ -62,7 +61,7 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
       quantity: 1,
       thumbnail: product.thumbnail,
     }));
-    setIsCartOpen(true); 
+    dispatch(setCartOpen(true)); 
   };
 
   const handleCardClick = () => navigate(`/product/${product.id}`);
