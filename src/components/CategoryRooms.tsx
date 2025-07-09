@@ -17,7 +17,7 @@ const rooms = [
   {
     title: 'Living Room',
     name: 'Modern Elegance',
-    image: "bg-[url('assets/70655e8b25a06a33769af9bf5fe8f8ed81ce75d8.png')]",
+    image: "bg-[url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/70655e8b25a06a33769af9bf5fe8f8ed81ce75d8.png')]",
     to: '/shop/living',
   },
 ];

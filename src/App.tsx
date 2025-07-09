@@ -7,7 +7,7 @@ import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import Checkout from "./pages/Checkout/Checkout"
-import { Protect, SignedOut } from "@clerk/react-router";
+import { Protect, SignIn } from "@clerk/react-router";
 import { RedirectToSignIn } from "@clerk/react-router";
 
 
@@ -23,13 +23,14 @@ function App() {
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart/>} />
         
+        <Route path="/sign-in" element={<SignIn />} />
         <Route path="/contact" element={
-          <Protect fallback={<RedirectToSignIn />}>
+          <Protect fallback={<RedirectToSignIn/>}>
             <Contact/>
           </Protect>
           } />
         <Route path="/checkout" element={
-          <Protect fallback={<RedirectToSignIn />}>
+          <Protect fallback={<RedirectToSignIn/>}>
             <Checkout/>
           </Protect>
           } />

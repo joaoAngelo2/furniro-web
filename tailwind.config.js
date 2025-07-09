@@ -24,8 +24,8 @@ export default {
         "dining-img": "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/home-1.png')",
         "living-img":
           "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/b7e392a7f3961ca2b1edab00f7a7640b3c2ed666.png')",
-        "bedroom-img": "url('/src/assets/bedroom.png')",
-        "inner-peace": "url('/src/assets/living.png')",
+        "bedroom-img": "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/bedroom.png')",
+        "inner-peace": "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/living.png')",
         "beatiful-room-2":
           "url('https://furniro-web.s3.us-east-2.amazonaws.com/assets/acc48179d1b18b523420e79dda1e92951ecde49b.png')",
       },

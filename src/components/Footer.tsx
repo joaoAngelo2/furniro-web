@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                   className=""
                 >
                   <img
-                    src="/src/assets/facebook-icon.svg"
+                    src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/facebook-icon.svg"
                     alt="Facebook"
                     className="w-3"
                   />
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                   aria-label="Instagram"
                 >
                   <img
-                    src="/src/assets/instagram-icon.svg"
+                    src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/instagram-icon.svg"
                     alt="Instagram"
                     className="w-3"
                   />
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                   aria-label="Twitter"
                 >
                   <img
-                    src="/src/assets/twitter-icon.svg"
+                    src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/twitter-icon.svg"
                     alt="Twitter"
                     className="w-3"
                   />
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                   aria-label="LinkedIn"
                 >
                   <img
-                    src="/src/assets/linkedin-icon.svg"
+                    src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/linkedin-icon.svg"
                     alt="LinkedIn"
                     className="w-3"
                   />

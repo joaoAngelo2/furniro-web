@@ -6,6 +6,7 @@ import { removeFromCart } from "../slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { formatPriceUSD } from "../utils/formattedPrice";
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { useCartModal } from "../hooks/useCartModal";
 
 
 const Header: React.FC = () => {
@@ -13,7 +14,7 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { isCartOpen, setIsCartOpen } = useCartModal();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

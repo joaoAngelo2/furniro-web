@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useCartModal } from "../hooks/useCartModal";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
 import { type ProductHint } from "../hooks/useProducts";
@@ -18,12 +18,6 @@ interface ProductCardProps {
   thumbnail: string;
   hint?: ProductHint;
 }
-
-const formatPrice = (price: number) => 
-  new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  }).format(price);
 
 const ActionButton = ({ icon, label }: { icon: string; label: string }) => (
   <span className="flex items-center gap-[0.1875rem] text-white font-poppins text-[1rem] font-semibold leading-[150%] cursor-pointer hover:underline">
@@ -52,6 +46,7 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { setIsCartOpen } = useCartModal();
 
   const { formattedPrice, formattedOriginalPrice } = useMemo(() => ({
     formattedPrice: "Rp. "+formatPriceUSD(product.price),
@@ -67,7 +62,7 @@ const ProductCard: React.FC<{ product: ProductCardProps }> = ({ product }) => {
       quantity: 1,
       thumbnail: product.thumbnail,
     }));
-    toast.success(`${product.name} adicionado ao carrinho!`);
+    setIsCartOpen(true); 
   };
 
   const handleCardClick = () => navigate(`/product/${product.id}`);

@@ -52,14 +52,12 @@ const SingleProductPage: React.FC = () => {
   );
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
-  // --- Função para exibir o Toast ---
   const triggerToast = (message: string) => {
     console.log("Toast: " + message);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
 
-  // --- Efeito para buscar os dados do produto ---
   useEffect(() => {
     if (!id) {
       setError("Product ID not found.");
@@ -106,10 +104,7 @@ const SingleProductPage: React.FC = () => {
     fetchRelatedProducts();
   }, [product]);
 
-  // --- Funções para o seletor de quantidade ---
-  const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () =>
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
 
   // --- Função para adicionar ao carrinho (só feedback por enquanto) ---
   const handleAddToCart = () => {
@@ -267,7 +262,7 @@ const SingleProductPage: React.FC = () => {
             )}
             {/* Quantidade e Botão Add to Cart */}
             <div className="flex items-center gap-4 mb-8">
-              <Quantity/>
+              <Quantity productId={product.id}/>
               <button
                 onClick={handleAddToCart}
                 className="w-52 h-16 border border-black text-black rounded-lg hover:bg-slate-500 hover:text-white hover:border-slate-500 transition-colors duration-200"
@@ -275,7 +270,6 @@ const SingleProductPage: React.FC = () => {
                 Add To Cart
               </button>
             </div>
-            {/* Detalhes Adicionais (SKU, Category, Tags) */}
             <div className="border-t border-cinza pt-8 mt-8 text-prata text-base">
               <p className="mb-3">
                 SKU : <span className="">{product.sku}</span>
