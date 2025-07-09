@@ -1,5 +1,5 @@
 
-import shopBackground from "../assets/shop-background.svg";
+const shopBackground = "https://furniro-web.s3.us-east-2.amazonaws.com/assets/shop-background.svg";
 import { Link } from "react-router-dom";
 
 
@@ -18,9 +18,8 @@ const ShopBanner = ({name, exibe}: ExibeProps) => {
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center">
-        {/* Título "Shop" */}
         
-        <img src="/src/assets/logo.png" alt="logo" className={`${exibe ? 'block': 'hidden'} w-16 h-16`} />
+        <img src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/logo.png" alt="logo" className={`${exibe ? 'block': 'hidden'} w-16 h-16`} />
         <h1 className="text-black font-poppins text-[3rem] font-medium leading-none">
           {name}
         </h1>
