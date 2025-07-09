@@ -134,57 +134,89 @@ const Header: React.FC = () => {
       </nav>
 
       {isCartOpen && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsCartOpen(false)}>
-        <div className="fixed top-0 right-0 h-96 md:h-[30rem] w-96 bg-white shadow-lg z-50 flex flex-col">
-          <div className="flex justify-between items-center p-4 ">
-            <h2 className="text-black text-2xl font-semibold pb-3 font-['Poppins'] w-full  border-b">Shopping Cart</h2>
-            <button 
-              onClick={() => setIsCartOpen(false)}
-              className="text-gray-500 pb-3 hover:text-gray-700 "
-            >
-              <img src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/group.svg" alt="" className="w-5 h-5" />
-            </button>
-          </div>
-          <div className="flex-1 p-4 overflow-y-auto max-h-[90%]">
-            <ul className="space-y-2 pr-2">
-              {cartItems.map(item => (
-                <div className="flex items-center justify-between gap-4 p-2" key={item.id}>
-                  <div className="w-20 h-20 bg-cover rounded-md flex-shrink-0" style={{ backgroundImage: `url(${item.thumbnail})` }}></div>
-                  <div className="flex-1" >
-                    <div className="text-black text-base font-normal font-['Poppins']" >{item.name}</div>
-                    <div className="flex gap-3 mt-1">
-                      <p className="text-sm font-light">{item.quantity} x </p>
-                      <p className="text-yellow-600 text-sm font-medium font-['Poppins']">Rs. {formatPriceUSD(item.price)}</p>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsCartOpen(false)}
+        >
+          <div
+            className="fixed top-0 right-0 h-full sm:h-[32rem] w-[90vw] sm:w-[24rem] md:w-[26rem] bg-white shadow-lg z-50 flex flex-col"
+            onClick={(e) => e.stopPropagation()} 
+          >
+            <div className="flex justify-between items-center px-4 py-3 border-b">
+              <h2 className="text-black text-xl font-semibold font-['Poppins']">Shopping Cart</h2>
+              <button
+                onClick={() => setIsCartOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <img
+                  src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/group.svg"
+                  alt="Fechar"
+                  className="w-5 h-5"
+                />
+              </button>
+            </div>
+
+            <div className="flex-1 p-4 overflow-y-auto">
+              <ul className="space-y-3 pr-2">
+                {cartItems.map((item) => (
+                  <div
+                    className="flex items-center justify-between gap-4 p-2"
+                    key={item.id}
+                  >
+                    <div
+                      className="w-20 h-20 bg-cover bg-center rounded-md flex-shrink-0"
+                      style={{ backgroundImage: `url(${item.thumbnail})` }}
+                    ></div>
+                    <div className="flex-1">
+                      <div className="text-black text-base font-['Poppins']">{item.name}</div>
+                      <div className="flex gap-2 mt-1 text-sm">
+                        <p className="text-sm font-light">{item.quantity} x</p>
+                        <p className="text-yellow-600 font-medium font-['Poppins']">
+                          Rs. {formatPriceUSD(item.price)}
+                        </p>
+                      </div>
                     </div>
+                    <button
+                      className="flex-shrink-0 p-1 hover:bg-gray-100 rounded"
+                      onClick={() => dispatch(removeFromCart(item.id))}
+                    >
+                      <img
+                        src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/x.svg"
+                        alt="Remover"
+                        className="w-5 h-5"
+                      />
+                    </button>
                   </div>
-                  <button className="flex-shrink-0 p-1 hover:bg-gray-100 rounded" onClick={() =>
-                      dispatch(removeFromCart(item.id))
-                  }>
-                    <img src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/x.svg" alt="Remove item" className="w-5 h-5" />
-                  </button>
-                </div>
-              ))}
-              <li>
-              </li>
-            </ul>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex justify-between items-center px-4 py-3">
+              <p className="text-black text-base font-['Poppins']">Subtotal</p>
+              <p className="text-yellow-600 text-base font-semibold font-['Poppins']">
+                Rs. {formatPriceUSD(total)}
+              </p>
+            </div>
+
+            <div className="border-t w-full flex flex-wrap justify-center gap-3 px-4 py-6">
+              <Link to="/cart">
+                <span className="text-black text-xs border border-black px-4 py-2 rounded-full font-['Poppins']">
+                  Cart
+                </span>
+              </Link>
+              <Link to="/checkout">
+                <span className="text-black text-xs border border-black px-4 py-2 rounded-full font-['Poppins']">
+                  Checkout
+                </span>
+              </Link>
+              <span className="text-black text-xs border border-black px-4 py-2 rounded-full font-['Poppins']">
+                Comparison
+              </span>
+            </div>
           </div>
-          <div className="flex p-4 gap-20">
-            <p className="text-black text-base font-normal font-['Poppins']">Subtotal</p>
-            <p className="text-yellow-600 text-base font-semibold font-['Poppins']">Rs. {formatPriceUSD(total)}</p>
-          </div>
-          <div className="border-t w-full flex place-content-center gap-2 py-7">
-            <Link to="/cart">
-            <span className="text-black text-xs border border-black px-4 font-normal font-['Poppins'] rounded-[50px] py-2 ">Cart</span>
-            </Link>
-            <Link to="/checkout">
-            <span className="text-black text-xs border border-black px-4 font-normal font-['Poppins'] rounded-[50px] py-2 ">Checkout</span>
-            </Link>
-            
-            <span className="text-black text-xs border border-black px-4 font-normal font-['Poppins'] rounded-[50px] py-2 ">Comparison</span>
-          </div>
-        </div>
         </div>
       )}
+
 
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white w-full py-5 shadow-lg">
@@ -213,9 +245,11 @@ const Header: React.FC = () => {
               </span>
             </li>
             <li>
-              <span className="font-poppins font-medium text-gray-800 hover:text-orange-500 cursor-not-allowed">
-                Contact
-              </span>
+              <Link to='/contact'>
+                <span className="font-poppins font-medium text-gray-800 hover:text-orange-500 cursor-not-allowed">
+                  Contact
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
