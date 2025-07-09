@@ -5,7 +5,7 @@ import ShopBanner from "../../components/ShopBanner";
 import { toast } from "react-toastify";
 import { type RootState } from "../../store";
 import React from "react";
-import { useCheckoutForms } from "../../hooks/useCheckoutForms";
+import { useCheckoutForms } from "../../hooks/useForms";
 import { type CheckoutSchema } from "../../schemas/checkoutSchema";
 import { useSelector } from "react-redux";
 import { formatPriceUSD } from "../../utils/formattedPrice";
@@ -26,26 +26,33 @@ const Checkout: React.FC = () => {
   };
 
   async function handleZipCode(zip: string) {
-    if (zip.length === 8) {
-      try {
-        const response = await fetch(`https://viacep.com.br/ws/${zip}/json/`);
-        const data = await response.json();
-        setValue('country', data.regiao || '');
-        setValue("streetAddress", data.bairro || "");
-        setValue("city", data.localidade || "");
-        setValue("state", data.uf || "");
-        setValue("region", data.logradouro || "");
-      } catch (error) {
-        console.error(error);
-      }
+  const onlyNumbers = zip.replace(/\D/g, '');
+
+  const formattedZip = onlyNumbers.length > 5
+    ? `${onlyNumbers.slice(0, 5)}-${onlyNumbers.slice(5, 8)}`
+    : onlyNumbers;
+  setValue('zipCode', formattedZip);
+  if (formattedZip.length === 9) {
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${onlyNumbers}/json/`);
+      const data = await response.json();
+      setValue('country', data.regiao || '');
+      setValue('streetAddress', data.bairro || '');
+      setValue('city', data.localidade || '');
+      setValue('state', data.uf || '');
+      setValue('region', data.logradouro || '');
+    } catch (error) {
+      console.error(error);
     }
   }
+}
+
 
   return (
     <div>
       <Header />
       <ShopBanner name={"Checkout"} exibe={true} />
-      <div className="w-full h-[150rem] md:h-[114.32rem] grid place-items-center">
+      <div className="w-full h-[150rem] md:h-[130.32rem] grid place-items-center">
          <form
             className="w-11/12 md:h-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"
             onSubmit={(e) => {
@@ -148,6 +155,9 @@ const Checkout: React.FC = () => {
                 className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6"
                 {...register("country")}
               />
+              {errors.country && (
+                <span className="text-red-500 text-sm">{errors.country.message}</span>
+              )}
             </div>
             <div className="w-full flex flex-col gap-4">
               <label
@@ -156,12 +166,16 @@ const Checkout: React.FC = () => {
               >
                 Street address
               </label>
+             
               <input
                 type="text"
                 id="saddress"
                 className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6"
                 {...register("streetAddress")}
               />
+               {errors.streetAddress && (
+                <span className="text-red-500 text-sm">{errors.streetAddress.message}</span>
+              )}
             </div>
             <div className="w-full flex flex-col gap-4">
               <label
@@ -252,7 +266,7 @@ const Checkout: React.FC = () => {
               type="text"
               id="ainformation"
               className="w-full h-20  bg-white rounded-[10px] border border-neutral-400 my-auto pl-6"
-              placeholder="Additional information"
+              placeholder="Additional information" {...register('additionalInformation')}
             />
           </div>
 
@@ -288,7 +302,7 @@ const Checkout: React.FC = () => {
                 <p className="text-black text-sm md:text-base font-light font-['Poppins']">
                   Rs. {formatPriceUSD(total)}
                 </p>
-                <p className="text-yellow-600 text-2xl font-bold font-['Poppins']">
+                <p className="text-yellow-600 text-md md:text-2xl font-bold font-['Poppins']">
                   Rs. {formatPriceUSD(total)}
                 </p>
               </div>

@@ -7,7 +7,10 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
 import type { ProductHint } from "../../hooks/useProducts";
-import Quantity from "../../components/Quantity";
+import { useDispatch, useSelector } from "react-redux";
+import { type RootState } from "../../store";
+import { addToCart } from "../../slices/cartSlice";
+import { setCartOpen } from '../../slices/cartModalSlice'; 
 
 interface Product {
   id: string;
@@ -51,12 +54,24 @@ const SingleProductPage: React.FC = () => {
     "description"
   );
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  const total = useSelector((state: RootState) => state.cart.total);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const dispatch = useDispatch();
 
   const triggerToast = (message: string) => {
     console.log("Toast: " + message);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
+
+  const decrementQuantity = () => {
+    if(quantity > 1)
+      setQuantity(quantity - 1);
+  }
+
+  const incrementQuantity = () => {
+    setQuantity(quantity + 1);
+  }
 
   useEffect(() => {
     if (!id) {
@@ -105,15 +120,23 @@ const SingleProductPage: React.FC = () => {
   }, [product]);
 
 
-
   const handleAddToCart = () => {
     if (product) {
       triggerToast(`${product.name} (x${quantity}) adicionado ao carrinho!`);
+      dispatch(addToCart({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: quantity,
+            thumbnail: product.thumbnail,
+    }));
+    dispatch(setCartOpen(true)); 
     } else {
       triggerToast("Nenhum produto para adicionar.");
     }
   };
 
+  
   // --- Renderização condicional para estados de carregamento/erro ---
   if (loading) {
     return (
@@ -260,7 +283,23 @@ const SingleProductPage: React.FC = () => {
             )}
             {/* Quantidade e Botão Add to Cart */}
             <div className="flex items-center gap-4 mb-8">
-              <Quantity productId={product.id}/>
+             <div className="flex w-32 items-center border border-gray-300 rounded-lg">
+                <button
+                  onClick={decrementQuantity}
+                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
+                >
+                  -
+                </button>
+                <span className="px-4 h-16 flex items-center justify-center">
+                  {quantity}
+                </span>
+                <button
+                  onClick={incrementQuantity}
+                  className="px-4 h-16 text-xl font-semibold hover:bg-gray-100"
+                >
+                  +
+                </button>
+              </div>
               <button
                 onClick={handleAddToCart}
                 className="w-52 h-16 border border-black text-black rounded-lg hover:bg-slate-500 hover:text-white hover:border-slate-500 transition-colors duration-200"

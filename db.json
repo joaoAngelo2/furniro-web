@@ -51,7 +51,8 @@
         "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg",
         "https://furniro-web.s3.us-east-2.amazonaws.com/images/Pingky.svg"
       ],
-      "descriptionImages": ["https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg", "https://furniro-web.s3.us-east-2.amazonaws.com/images/Muggo.svg"],
+      "descriptionImages": ["https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg",
+       "https://furniro-web.s3.us-east-2.amazonaws.com/images/Muggo.svg"],
       "thumbnail": "https://furniro-web.s3.us-east-2.amazonaws.com/images/Syltherine.svg",
       "category": "living",
       "sku": "SC001",
@@ -1470,12 +1471,12 @@
       "longDescription": "The Leviosa Bedside Table is a compact yet functional piece, ideal for keeping essentials close at hand in your bedroom. Its sleek design and small footprint make it perfect for smaller rooms, while its sturdy construction ensures durability. A convenient drawer provides discreet storage for personal items. Crafted from high-quality engineered wood with a smooth finish, this table is easy to clean and maintain. The minimalist aesthetic allows it to blend seamlessly with various bedroom decors, from contemporary to classic. A practical and elegant addition that enhances your bedside convenience.",
       "images": [
         "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/leviosa-bedside-detail-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/leviosa-bedside-detail-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg"
       ],
       "descriptionImages": [
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/leviosa-bedside-desc-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/leviosa-bedside-desc-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg"
       ],
       "thumbnail": "https://furniro-web.s3.us-east-2.amazonaws.com/images/Leviosa.svg",
       "category": "bedroom",
@@ -1501,12 +1502,12 @@
       "longDescription": "The Lolito Coffee Table is a bold statement piece for any modern living room, combining expansive surface area with sophisticated design. Crafted from premium materials, its sturdy construction and sleek finish make it both functional and visually striking. Perfect for entertaining or daily use, it anchors your seating area with elegance. Featuring a durable top ideal for beverages, books, and decor, this coffee table is designed for lasting beauty. Its low profile and strong build make it a practical yet luxurious addition, inviting social gatherings and comfortable living. Elevate your living space with this contemporary masterpiece.",
       "images": [
         "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/lolito-coffee-detail-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/lolito-coffee-detail-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg"
       ],
       "descriptionImages": [
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/lolito-coffee-desc-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/lolito-coffee-desc-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg"
       ],
       "thumbnail": "https://furniro-web.s3.us-east-2.amazonaws.com/images/Lolito.svg",
       "category": "living",
@@ -1532,12 +1533,12 @@
       "longDescription": "The Respira Floor Lamp offers refined illumination with its slender profile and elegant design. Perfect for living rooms, studies, or bedrooms, it casts a warm, inviting glow that enhances the ambiance of any space. Its minimalist aesthetic ensures it complements a wide range of interior styles without overcrowding. Constructed with a sturdy metal base and a durable fabric shade, this lamp is built for stability and long-term use. The simple foot-switch operation adds convenience, while its sleek lines provide a contemporary touch. A functional and beautiful addition that brightens your home with understated elegance.",
       "images": [
         "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/respira-lamp-detail-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/respira-lamp-detail-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg"
       ],
       "descriptionImages": [
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/respira-lamp-desc-1.svg",
-        "https://furniro-web.s3.us-east-2.amazonaws.com/images/respira-lamp-desc-2.svg"
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg",
+        "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg"
       ],
       "thumbnail": "https://furniro-web.s3.us-east-2.amazonaws.com/images/Respira.svg",
       "category": "bedroom",

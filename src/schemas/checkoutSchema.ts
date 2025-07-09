@@ -1,24 +1,49 @@
-import {z} from "zod";
+import { z } from "zod";
 
 export const checkoutSchema = z.object({
+  firstName: z.string()
+    .min(3, 'First name must be at least 3 characters long'),
 
-    firstName: z.string().min(3, 'Minimum 3 characters required'),
-    lastName: z.string().min(3, 'Minimum 3 characters required'),
-    company: z.string().optional(),
-    zipCode: z.string()
-    .min(8, 'ZIP code must have exactly 8 characters')
-    .regex(/^\d+$/, 'ZIP code must contain only numbers'),
-    region: z.string().min(10, 'Minimum 10 characters required'),
-    streetAddress: z.string().min(10, 'Minimum 10 characters required'),
-    city: z.string().min(2, 'Minimum 2 characters required'),
-    state: z.string()
-    .length(2, 'State must have exactly 2 characters')
-    .regex(/^[A-Z]{2}$/, 'State must be two uppercase letters'),
-    addOnAddress: z.string().min(3, 'Minimum 3 characters required'),
-    email: z.string().min(1, 'Required field').email('Invalid email'),
-    phone: z.string().min(11, 'Minimum 11 characters required'),
-    country: z.string().min(2, 'Minimum 2 characters required'),
-    paymentMethod: z.string().min(1, 'Please select a payment method'),
-})
+  lastName: z.string()
+    .min(3, 'Last name must be at least 3 characters long'),
+
+  company: z.string().optional(),
+
+  zipCode: z.string()
+    .regex(/^\d{5}-?\d{3}$/, 'Invalid ZIP code (e.g., 12345-678)'),
+
+  region: z.string()
+    .min(3, 'Region must be at least 3 characters long'),
+
+  streetAddress: z.string()
+    .min(10, 'Street address must be at least 10 characters long'),
+
+  city: z.string()
+    .min(2, 'City must be at least 2 characters long'),
+
+  state: z.string()
+    .length(2, 'State must be exactly 2 uppercase letters')
+    .regex(/^[A-Z]{2}$/, 'State must contain only uppercase letters (e.g., SP)'),
+
+  addOnAddress: z.string()
+    .min(3, 'Additional address info must be at least 3 characters long')
+    .optional(),
+
+  email: z.string()
+    .min(1, 'Email is required')
+    .email('Invalid email format'),
+
+  phone: z.string()
+    .regex(/^\d{10,11}$/, 'Phone number must be 10 or 11 digits (numbers only)'),
+
+  country: z.string()
+    .min(2, 'Country must be at least 2 characters long'),
+
+  paymentMethod: z.string()
+    .min(1, 'Please select a payment method'),
+  additionalInformation: z.string()
+    .min(2, 'Additional information must be at least 2 characters long')
+    .max(200,'200 characteres is the maximum' )
+});
 
 export type CheckoutSchema = z.infer<typeof checkoutSchema>;

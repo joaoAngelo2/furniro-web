@@ -121,19 +121,20 @@ const Header: React.FC = () => {
         <SignedIn>
           <UserButton />
         </SignedIn>
-          
-          <button aria-label="Shopping Cart" onFocus={() => setIsCartOpen(!isCartOpen)} >
+          <Link to='/cart'>
+          <button aria-label="Shopping Cart" >
             <img
               className="w-6"
               src="https://furniro-web.s3.us-east-2.amazonaws.com/assets/car-shop.svg"
               alt="Ícone de Carrinho de Compras"
             />
           </button>
+          </Link>
         </div>
       </nav>
 
       {isCartOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsCartOpen(false)}>
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsCartOpen(false)}>
         <div className="fixed top-0 right-0 h-96 md:h-[30rem] w-96 bg-white shadow-lg z-50 flex flex-col">
           <div className="flex justify-between items-center p-4 ">
             <h2 className="text-black text-2xl font-semibold pb-3 font-['Poppins'] w-full  border-b">Shopping Cart</h2>
