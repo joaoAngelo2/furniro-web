@@ -87,17 +87,18 @@ describe('Checkout Component', () => {
     );
 
     const zipInput = screen.getByLabelText(/ZIP Code/i);
-    await userEvent.type(zipInput, '12345678');
+    await userEvent.type(zipInput, '01310100');
 
     await waitFor(() => {
       expect((global as any).fetch).toHaveBeenCalledWith(
-        'https://viacep.com.br/ws/12345678/json/'
+        'https://viacep.com.br/ws/01310100/json/'
       );
     });
 
     await waitFor(() => {
       expect(screen.getByLabelText(/Town \/ City/i)).toHaveValue('Test City');
       expect(screen.getByLabelText(/Province/i)).toHaveValue('TS');
+      expect(screen.getByLabelText(/Street Address/i)).toHaveValue('Test Street');
     });
   });
 
@@ -156,6 +157,34 @@ describe('Checkout Component', () => {
 
     await waitFor(() => {
       expect(console.error).toHaveBeenCalled();
+    });
+  });
+
+  test('handles invalid ZIP code from API', async () => {
+    (global as any).fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({ erro: true }),
+      })
+    );
+
+    render(
+      <Provider store={mockStore}>
+        <Checkout />
+      </Provider>
+    );
+
+    const zipInput = screen.getByLabelText(/ZIP Code/i);
+    await userEvent.type(zipInput, '00000000');
+
+    await waitFor(() => {
+      expect((global as any).fetch).toHaveBeenCalledWith(
+        'https://viacep.com.br/ws/00000000/json/'
+      );
+    });
+
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Town \/ City/i)).toHaveValue('');
+      expect(screen.getByLabelText(/Province/i)).toHaveValue('');
     });
   });
 });
