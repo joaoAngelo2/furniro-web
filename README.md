@@ -1,72 +1,70 @@
-# ☕ Furniro Store - Projeto de E-commerce de Móveis
+# 🛋️ Furniro Web
 
-![Capa do Projeto Furniro - Imagem de destaque do site de móveis] 
-Este projeto é uma recriação das páginas do Furniro, um e-commerce de móveis, desenvolvida utilizando **React**, **TypeScript** e **Tailwind CSS**. O objetivo principal foi replicar fielmente o design original do Figma, implementando diversas funcionalidades essenciais de uma loja online. O projeto foi desenvolvido em grupo, seguindo metodologias ágeis de organização e versionamento.
+![Vite](https://img.shields.io/badge/Vite-6.3.5-blueviolet?logo=vite)![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-3.4-teal?logo=tailwindcss)
+![License](https://img.shields.io/badge/license-Private-red)
 
-## 🚀 Tecnologias Utilizadas
+Furniro Web é uma aplicação moderna construída com React, Vite e JSON Server para simular uma API REST. Integração com Clerk para autenticação.
 
-* **React:** Biblioteca JavaScript para construção de interfaces de usuário.
-* **TypeScript:** Superset do JavaScript que adiciona tipagem estática, garantindo maior segurança e manutenibilidade ao código.
-* **Tailwind CSS:** Framework CSS utilitário que permite construir designs complexos rapidamente com classes CSS de baixo nível.
-* **React Router DOM:** Para o gerenciamento de rotas e navegação entre as páginas da aplicação.
-* **Axios:** Cliente HTTP baseado em Promises para fazer requisições a APIs (utilizado para interagir com o JSON Server).
-* **JSON Server:** Ferramenta para simular uma API REST completa, utilizada como mock de banco de dados para os produtos da loja.
-* **React Toastify:** Biblioteca para exibir notificações "toast" de feedback ao usuário de forma não intrusiva.
-* **Vite:** Ferramenta de build rápida e otimizada para desenvolvimento front-end.
-* **ESLint:** Ferramenta de linting para garantir a qualidade e consistência do código.
 
-## ✨ Funcionalidades Implementadas
 
-O projeto replica as principais páginas e funcionalidades do design Furniro:
+## 📦 Instalação
 
-* **Header Fixo (Sticky Header):** Permanece visível no topo da tela durante o scroll, com navegação responsiva.
-    * Links de navegação (`Home`, `Shop`, `About`, `Contact`).
-    * Logo clicável que redireciona para a Home.
-    * Efeito de sublinhado animado nos links de navegação no hover.
-    * Menu hambúrguer para navegação em dispositivos móveis, com ícone à esquerda do logo.
-* **Footer Completo:** Presente em todas as páginas, com design fiel ao Figma.
-    * Links para redes sociais da Compass UOL (Facebook, Instagram, Twitter, LinkedIn).
-    * Formulário de Newsletter com validação personalizada e feedback visual.
-* **Página de Produto Individual (`/product/:id`):**
-    * Carregamento dinâmico de dados do produto via JSON Server, baseado no ID na URL.
-    * Exibição de imagem principal com thumbnails clicáveis para alternar visualização.
-    * Seleção de tamanho e cor do produto.
-    * Seletor de quantidade de itens.
-    * Botão "Add to Cart" com feedback visual (Toast) ao clicar.
-    * Seção de abas para "Description" e "Additional Information", com conteúdo dinâmico.
-    * **Estrelas de avaliação dinâmicas:** Exibição de estrelas cheias e vazias baseada na nota (`rate`) do produto do JSON.
-    * Botão "Show More" que redireciona para a página Shop.
-* **Página de Loja (`/shop`):**
-    * Listagem de todos os produtos com cards interativos.
-    * Funcionalidade de Paginação para navegar entre os resultados.
-    * Filtro de produtos por categoria (`Dining`, `Living`, `Bedroom`, etc.).
-* **Home Page (`/`):**
-    * Seção "Browse The Range" com categorias de produtos (Dining, Living, Bedroom) que redirecionam para a página Shop filtrada.
-    * Carrossel de móveis (seção "Our Products").
-    * Botões como "BUY NOW", "Show More" e "Explore More" que levam para a página "Shop".
-* **Responsividade:** O layout é totalmente adaptável a diferentes tamanhos de tela (mobile, tablet, desktop), seguindo uma abordagem mobile-first.
-* **Tipagem Forte com TypeScript:** Todo o projeto é tipado para garantir maior robustez e evitar erros em tempo de execução.
-
-## 📦 Como Rodar o Projeto
-
-Siga os passos abaixo para configurar e executar o projeto em sua máquina local:
-
-### Pré-requisitos
-
-Certifique-se de ter o [Node.js](https://nodejs.org/en/download/) (versão LTS recomendada) e o [npm](https://docs.npmjs.com/cli/v9/commands/npm) ou [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instalados.
-
-### 1. Clonar o Repositório
-
-git clone git@github.com:ArthurEstrela/furniro-web.git
-
-### 2. Instalar Dependências
-
+```bash
+git clone https://github.com/joaoAngelo2/furniro-web.git
+cd furniro-web
 npm install
+```
 
-### 3. Iniciar o JSON Server
 
-npm run server
+## ⚙️ Variáveis de Ambiente (.env)
+Crie um arquivo .env na raiz do projeto com:
+```
+.env
 
-### 4. Iniciar Aplicativo React
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_bm92ZWwtdGlnZXItMTkuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_X9kL8n7ebheDIYl9WWKyXJNVanchpTYvZuulDwyc9w
 
-npm run dev:vite
+```
+
+## 📁 Estrutura  de diretórios
+```
+src/
+├── components/      # Componentes reutilizáveis
+├── pages/           # Páginas e rotas
+├── hooks/           # Custom hooks            
+├── schemas/         # Verificação de formulario
+├── test/            # Diretório contendo os testes
+├── slices/          # Reducer 
+globais
+└── App.tsx
+└── store.tsx        # Redux
+```
+
+
+
+## 🧪 Testes
+Jest para testes
+
+Testing Library para componentes React
+
+
+Execute:
+
+```
+npm test
+```
+
+Para cobertura:
+```
+
+npm run test:coverage
+
+```
+
+## 🎥 Demonstração em Vídeo
+
+Veja a aplicação em funcionamento no vídeo da aplicação rodando em EC2 abaixo:
+
+[![Assista à demonstração](https://i9.ytimg.com/vi_webp/WFtOJcyHur0/mq2.webp?sqp=CJDfuMMG&rs=AOn4CLAq834QWgTbHEtDVQxX_7qVqwqS3Q)](https://youtu.be/WFtOJcyHur0)
