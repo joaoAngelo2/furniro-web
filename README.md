@@ -67,4 +67,4 @@ npm run test:coverage
 
 Veja a aplicação em funcionamento no vídeo da aplicação rodando em EC2 abaixo:
 
-[![Assista à demonstração](https://i9.ytimg.com/vi_webp/WFtOJcyHur0/mq2.webp?sqp=CJDfuMMG&rs=AOn4CLAq834QWgTbHEtDVQxX_7qVqwqS3Q)](https://youtu.be/WFtOJcyHur0)
+[![Assista à demonstração]([https://i9.ytimg.com/vi_webp/WFtOJcyHur0/mq2.webp?sqp=CJDfuMMG&rs=AOn4CLAq834QWgTbHEtDVQxX_7qVqwqS3Q](https://i9.ytimg.com/vi_webp/WFtOJcyHur0/mq2.webp?sqp=CNyQvMMG&rs=AOn4CLCM4xpTLwh4LgBgdZVcLYgUiap1Aw))](https://youtu.be/WFtOJcyHur0)
